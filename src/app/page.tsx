@@ -74,17 +74,51 @@ const HomePage: React.FC = () => {
     });
   };
 
-  // Filter issues based on selected tags
+  // Filter issues based on selected tags (OR within categories, AND across categories)
   const filterIssues = (currentSelectedTags: string[]) => {
     if (currentSelectedTags.length === 0) {
-      setFilteredIssues(issues); // Show all if no tags are selected
-    } else {
-      const newFilteredIssues = issues.filter(issue =>
-        currentSelectedTags.every(tag => issue.tags.includes(tag))
-      );
-      setFilteredIssues(newFilteredIssues);
+      setFilteredIssues(issues);
+      return;
     }
+
+    // Build selected tags grouped by category
+    const selectedByCategory: Record<string, string[]> = {};
+    Object.entries(tagCategoryMap).forEach(([category, tags]) => {
+      selectedByCategory[category] = currentSelectedTags.filter(tag => tags.includes(tag));
+    });
+    // Handle tags outside known categories
+    const known = Object.values(tagCategoryMap).flat();
+    const others = currentSelectedTags.filter(tag => !known.includes(tag));
+    if (others.length > 0) {
+      selectedByCategory["Other"] = others;
+    }
+
+    // Issue must match at least one selected tag per category
+    const newFiltered = issues.filter(issue => {
+      return Object.values(selectedByCategory).every(selectedTags => {
+        if (selectedTags.length === 0) return true;
+        return selectedTags.some(tag => issue.tags.includes(tag));
+      });
+    });
+
+    setFilteredIssues(newFiltered);
   };
+
+  // Group tags into categories
+  const tagCategoryMap: Record<string, string[]> = {
+    "Blockchains": ["ethereum", "polkadot", "cosmos", "solana", "bitcoin", "ipfs", "defi", "web3"],
+    "Languages": ["go", "rust", "javascript", "python", "solidity", "cpp", "c", "react"],
+    "Domains": ["core", "consensus", "docs", "frontend", "tooling", "smartcontracts", "language", "infrastructure", "nft", "lightning"]
+  };
+  let categorizedTags: Record<string, string[]> = Object.entries(tagCategoryMap).reduce((acc, [category, tags]) => {
+    acc[category] = tags.filter(tag => allTags.includes(tag));
+    return acc;
+  }, {} as Record<string, string[]>);
+  const knownTags = Object.values(tagCategoryMap).flat();
+  const otherTags = allTags.filter(tag => !knownTags.includes(tag));
+  if (otherTags.length > 0) {
+    categorizedTags["Other"] = otherTags;
+  }
 
   return (
     <div className="container mx-auto p-4 font-sans">
@@ -110,21 +144,30 @@ const HomePage: React.FC = () => {
           {loading ? (
             <p>Loading tags...</p>
           ) : allTags.length > 0 ? (
-            <div className="space-y-2">
-              {allTags.map(tag => (
-                <div key={tag} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id={`tag-${tag}`}
-                    checked={selectedTags.includes(tag)}
-                    onChange={() => handleTagChange(tag)}
-                    className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                  />
-                  <label htmlFor={`tag-${tag}`} className="text-gray-700 capitalize cursor-pointer">
-                    {tag}
-                  </label>
-                </div>
-              ))}
+            <div>
+              {Object.entries(categorizedTags).map(([category, tags]) =>
+                tags.length > 0 ? (
+                  <div key={category} className="mb-4">
+                    <h3 className="text-lg font-semibold">{category}</h3>
+                    <div className="space-y-2 ml-4">
+                      {tags.map(tag => (
+                        <div key={tag} className="flex items-center">
+                          <input
+                            type="checkbox"
+                            id={`tag-${tag}`}
+                            checked={selectedTags.includes(tag)}
+                            onChange={() => handleTagChange(tag)}
+                            className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                          />
+                          <label htmlFor={`tag-${tag}`} className="text-gray-700 capitalize cursor-pointer">
+                            {tag}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null
+              )}
             </div>
           ) : (
             !error && <p>No tags available.</p>
