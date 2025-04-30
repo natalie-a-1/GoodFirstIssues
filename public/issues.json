@@ -1,0 +1,2238 @@
+[
+    {
+        "id": 2702374517,
+        "title": "Write tests for debug tracing methods",
+        "url": "https://github.com/ethereum/go-ethereum/issues/30833",
+        "repository": "ethereum/go-ethereum",
+        "tags": [
+            "ethereum",
+            "core",
+            "go"
+        ],
+        "created_at": "2024-11-28T14:39:59Z",
+        "number": 30833
+    },
+    {
+        "id": 1084526366,
+        "title": "Implement EIP 4361",
+        "url": "https://github.com/ethereum/go-ethereum/issues/24132",
+        "repository": "ethereum/go-ethereum",
+        "tags": [
+            "ethereum",
+            "core",
+            "go"
+        ],
+        "created_at": "2021-12-20T08:59:14Z",
+        "number": 24132
+    },
+    {
+        "id": 3027456131,
+        "title": "Make `testing/util` be importable anywhere.",
+        "url": "https://github.com/OffchainLabs/prysm/issues/15231",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2025-04-29T08:11:09Z",
+        "number": 15231
+    },
+    {
+        "id": 2900750348,
+        "title": "Make prysmctl fork aware",
+        "url": "https://github.com/OffchainLabs/prysm/issues/15020",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2025-03-06T15:36:36Z",
+        "number": 15020
+    },
+    {
+        "id": 2624303099,
+        "title": "server ignores request to gzip data",
+        "url": "https://github.com/OffchainLabs/prysm/issues/14593",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2024-10-30T14:31:25Z",
+        "number": 14593
+    },
+    {
+        "id": 2028126562,
+        "title": "NewSlotTickerWithIntervals Panics if a One Second Slot is Used",
+        "url": "https://github.com/OffchainLabs/prysm/issues/13280",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2023-12-06T09:34:47Z",
+        "number": 13280
+    },
+    {
+        "id": 1886120419,
+        "title": "Add Network Config Test to Check Against Upstream Values",
+        "url": "https://github.com/OffchainLabs/prysm/issues/12864",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2023-09-07T15:28:39Z",
+        "number": 12864
+    },
+    {
+        "id": 1864957013,
+        "title": "Create an OpenAPI specification for custom Prysm endpoints",
+        "url": "https://github.com/OffchainLabs/prysm/issues/12794",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2023-08-24T11:30:06Z",
+        "number": 12794
+    },
+    {
+        "id": 1578202373,
+        "title": "Beacon Node Flag Irregularities",
+        "url": "https://github.com/OffchainLabs/prysm/issues/11978",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2023-02-09T16:21:24Z",
+        "number": 11978
+    },
+    {
+        "id": 1374426880,
+        "title": "Could not perform voluntary exit with non fully synced beacon node",
+        "url": "https://github.com/OffchainLabs/prysm/issues/11451",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-09-15T12:08:49Z",
+        "number": 11451
+    },
+    {
+        "id": 1241898785,
+        "title": "Don't overwrite DefaultFeeRecipient config param at runtime",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10720",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-05-19T14:43:40Z",
+        "number": 10720
+    },
+    {
+        "id": 1188241382,
+        "title": "Failed to start beacon: Start request repeated too quickly",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10468",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-03-31T15:11:14Z",
+        "number": 10468
+    },
+    {
+        "id": 1180207934,
+        "title": "Improve testing/util BeaconState creation function options",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10429",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-03-25T00:54:24Z",
+        "number": 10429
+    },
+    {
+        "id": 1119601525,
+        "title": "Flaky test //beacon-chain/p2p:go_default_test ",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10160",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-01-31T15:47:03Z",
+        "number": 10160
+    },
+    {
+        "id": 1117448102,
+        "title": "Improve validator monitor reporting",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10147",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-01-28T14:08:10Z",
+        "number": 10147
+    },
+    {
+        "id": 1114420320,
+        "title": "Clarify Differences Between Accounts Password File and Wallet Password File in CLI Help",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10131",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-01-25T22:21:13Z",
+        "number": 10131
+    },
+    {
+        "id": 1101151198,
+        "title": "Mutex Lock Analyzer for Advanced Lock Patterns",
+        "url": "https://github.com/OffchainLabs/prysm/issues/10078",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2022-01-13T03:45:24Z",
+        "number": 10078
+    },
+    {
+        "id": 1069926368,
+        "title": "Resolve Minor Security Issues Reported by Horusec",
+        "url": "https://github.com/OffchainLabs/prysm/issues/9975",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2021-12-02T19:52:50Z",
+        "number": 9975
+    },
+    {
+        "id": 963828295,
+        "title": "Node restart breaks p2p connectivity",
+        "url": "https://github.com/OffchainLabs/prysm/issues/9347",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2021-08-09T09:55:25Z",
+        "number": 9347
+    },
+    {
+        "id": 946859588,
+        "title": "Deposit acceptance by beacon chain not always noticed by Prysm's validator.",
+        "url": "https://github.com/OffchainLabs/prysm/issues/9216",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2021-07-17T16:52:47Z",
+        "number": 9216
+    },
+    {
+        "id": 856976652,
+        "title": "Improve ineffassign static code analyzer",
+        "url": "https://github.com/OffchainLabs/prysm/issues/8755",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2021-04-13T13:43:19Z",
+        "number": 8755
+    },
+    {
+        "id": 641970326,
+        "title": "Unite All Logging into a Single Handler",
+        "url": "https://github.com/OffchainLabs/prysm/issues/6317",
+        "repository": "prysmaticlabs/prysm",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "go"
+        ],
+        "created_at": "2020-06-19T13:29:32Z",
+        "number": 6317
+    },
+    {
+        "id": 2735514521,
+        "title": "Update Remote Monitoring to Report Disk Usage for Datadir Mount Point",
+        "url": "https://github.com/sigp/lighthouse/issues/6687",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2024-12-12T10:36:41Z",
+        "number": 6687
+    },
+    {
+        "id": 2558238785,
+        "title": "Modularize or Simplify the eth2 crate",
+        "url": "https://github.com/sigp/lighthouse/issues/6452",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2024-10-01T05:42:36Z",
+        "number": 6452
+    },
+    {
+        "id": 2523761904,
+        "title": "Reproducible builds",
+        "url": "https://github.com/sigp/lighthouse/issues/6393",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2024-09-13T02:48:53Z",
+        "number": 6393
+    },
+    {
+        "id": 2375353986,
+        "title": "Add per-operation block processing metrics",
+        "url": "https://github.com/sigp/lighthouse/issues/5999",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2024-06-26T13:26:36Z",
+        "number": 5999
+    },
+    {
+        "id": 2047718005,
+        "title": "Validator client HTTP API wouldn't start without a beacon node",
+        "url": "https://github.com/sigp/lighthouse/issues/5019",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2023-12-19T00:33:29Z",
+        "number": 5019
+    },
+    {
+        "id": 1472108691,
+        "title": "Support --validator-dir and other flags after subcommands",
+        "url": "https://github.com/sigp/lighthouse/issues/3768",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-12-01T23:46:25Z",
+        "number": 3768
+    },
+    {
+        "id": 1453367896,
+        "title": "Service attribute in logs pollutes datadog log ingestion/indexing",
+        "url": "https://github.com/sigp/lighthouse/issues/3734",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-11-17T13:39:19Z",
+        "number": 3734
+    },
+    {
+        "id": 1364456017,
+        "title": "Please add to the faq if running a pruned consensus node is required for a full archival consensus client node.",
+        "url": "https://github.com/sigp/lighthouse/issues/3549",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-09-07T10:37:31Z",
+        "number": 3549
+    },
+    {
+        "id": 1331472667,
+        "title": "Log more detail when JWT auth fails",
+        "url": "https://github.com/sigp/lighthouse/issues/3435",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-08-08T07:49:17Z",
+        "number": 3435
+    },
+    {
+        "id": 1284569796,
+        "title": "Audit prometheus histogram buckets",
+        "url": "https://github.com/sigp/lighthouse/issues/3285",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-06-25T12:14:04Z",
+        "number": 3285
+    },
+    {
+        "id": 1185855166,
+        "title": "Logging timestamps changed from local time to UTC",
+        "url": "https://github.com/sigp/lighthouse/issues/3130",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-03-30T04:24:00Z",
+        "number": 3130
+    },
+    {
+        "id": 1176988757,
+        "title": "Set process_cpu_seconds_total to type counter",
+        "url": "https://github.com/sigp/lighthouse/issues/3108",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-03-22T16:01:42Z",
+        "number": 3108
+    },
+    {
+        "id": 1166590680,
+        "title": "Restarting the bn on a network before bc launch shows a bunch of `WARN Error processing HTTP API request` messages",
+        "url": "https://github.com/sigp/lighthouse/issues/3078",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-03-11T16:02:03Z",
+        "number": 3078
+    },
+    {
+        "id": 1155964083,
+        "title": "Fix handling of `api-token.txt` and `validator_key_cache.json` when disk is full",
+        "url": "https://github.com/sigp/lighthouse/issues/3051",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2022-03-01T23:42:43Z",
+        "number": 3051
+    },
+    {
+        "id": 1030813824,
+        "title": "Add slasher HTTP API",
+        "url": "https://github.com/sigp/lighthouse/issues/2734",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2021-10-19T23:06:02Z",
+        "number": 2734
+    },
+    {
+        "id": 942596219,
+        "title": "Import sync committee messages into op pool",
+        "url": "https://github.com/sigp/lighthouse/issues/2449",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2021-07-13T01:35:24Z",
+        "number": 2449
+    },
+    {
+        "id": 910514561,
+        "title": "VC blocks on `SlashingDatabase::open` when running with NSSM on Windows",
+        "url": "https://github.com/sigp/lighthouse/issues/2394",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2021-06-03T13:49:53Z",
+        "number": 2394
+    },
+    {
+        "id": 625346706,
+        "title": "Validate wallet passwords as UTF-8",
+        "url": "https://github.com/sigp/lighthouse/issues/1205",
+        "repository": "sigp/lighthouse",
+        "tags": [
+            "ethereum",
+            "consensus",
+            "rust"
+        ],
+        "created_at": "2020-05-27T03:25:15Z",
+        "number": 1205
+    },
+    {
+        "id": 3032270820,
+        "title": "Add new page: Gaming",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15361",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-04-30T19:27:49Z",
+        "number": 15361
+    },
+    {
+        "id": 3032260003,
+        "title": "Add new page: Prediction markets",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15360",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-04-30T19:23:33Z",
+        "number": 15360
+    },
+    {
+        "id": 3032234263,
+        "title": "Add new page: restaking",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15359",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-04-30T19:13:40Z",
+        "number": 15359
+    },
+    {
+        "id": 2969632194,
+        "title": "fix: back to top button in docs",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15231",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-04-03T13:40:00Z",
+        "number": 15231
+    },
+    {
+        "id": 2969125818,
+        "title": "Update content on /social-networks page",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15227",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-04-03T10:37:01Z",
+        "number": 15227
+    },
+    {
+        "id": 2914704545,
+        "title": "Update all testnet references, removing those deprecated",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15092",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-03-12T17:39:09Z",
+        "number": 15092
+    },
+    {
+        "id": 2908346809,
+        "title": "Revamp Find-wallet header",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/15049",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-03-10T20:28:15Z",
+        "number": 15049
+    },
+    {
+        "id": 2860376614,
+        "title": "Add Family Wallet",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/14929",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-02-18T12:56:06Z",
+        "number": 14929
+    },
+    {
+        "id": 2821270968,
+        "title": "Bug report: update link on stablecoin page",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/14777",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-01-30T16:25:55Z",
+        "number": 14777
+    },
+    {
+        "id": 2790778996,
+        "title": "Bug report: tutorials do not appear in other languages",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/14689",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2025-01-15T20:19:10Z",
+        "number": 14689
+    },
+    {
+        "id": 2472883569,
+        "title": "Design request: redesign dapps page",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13679",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-08-19T09:23:33Z",
+        "number": 13679
+    },
+    {
+        "id": 2468290961,
+        "title": "Content request: best design practices for wallets (UX/UI)",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13655",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-08-15T15:22:42Z",
+        "number": 13655
+    },
+    {
+        "id": 2467704446,
+        "title": "Content request: ETH issuance - how many ETH are there?",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13644",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-08-15T09:12:00Z",
+        "number": 13644
+    },
+    {
+        "id": 2416262863,
+        "title": "include event tracking for \"edit\" button globally ",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13422",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-07-18T12:43:00Z",
+        "number": 13422
+    },
+    {
+        "id": 2411407889,
+        "title": "Add JSON-RPC endpoint playground links",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13410",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-07-16T15:07:16Z",
+        "number": 13410
+    },
+    {
+        "id": 2319785331,
+        "title": "Create stories for Staking components",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13054",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-27T21:14:22Z",
+        "number": 13054
+    },
+    {
+        "id": 2319785179,
+        "title": "Create stories for FindWallet components",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13053",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-27T21:14:11Z",
+        "number": 13053
+    },
+    {
+        "id": 2319784466,
+        "title": "Create stories for Header components",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13050",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-27T21:13:17Z",
+        "number": 13050
+    },
+    {
+        "id": 2319783453,
+        "title": "Create issue for BannerGrid components",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13046",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-27T21:12:07Z",
+        "number": 13046
+    },
+    {
+        "id": 2319783204,
+        "title": "Create story for AssetDownload component",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13045",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-27T21:11:50Z",
+        "number": 13045
+    },
+    {
+        "id": 2319771608,
+        "title": "Implementation of visual testing epic",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/13043",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-27T20:58:29Z",
+        "number": 13043
+    },
+    {
+        "id": 2287097537,
+        "title": "Add event listing: European Blockchain Convention",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/12937",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-05-09T07:41:43Z",
+        "number": 12937
+    },
+    {
+        "id": 2137188006,
+        "title": "Documentation request: interacting with smart contracts",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/12195",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-02-15T18:39:08Z",
+        "number": 12195
+    },
+    {
+        "id": 2107352464,
+        "title": "RANDAO explanation in Node Architecture page",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/12059",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-01-30T09:31:57Z",
+        "number": 12059
+    },
+    {
+        "id": 2102271771,
+        "title": "Review texts still referring to mining/miners etc.",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/12030",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2024-01-26T14:04:52Z",
+        "number": 12030
+    },
+    {
+        "id": 2055907032,
+        "title": "Suggest a developer tool",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/11833",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2023-12-25T23:18:01Z",
+        "number": 11833
+    },
+    {
+        "id": 2010659314,
+        "title": "Want to add Rise In platform to this page",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/11717",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2023-11-25T14:06:51Z",
+        "number": 11717
+    },
+    {
+        "id": 2083833136,
+        "title": "Update Comments in `.env.example`",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/11937",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2023-10-28T18:02:24Z",
+        "number": 11937
+    },
+    {
+        "id": 1887772313,
+        "title": "Create FAQ component",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/11118",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2023-09-08T14:14:17Z",
+        "number": 11118
+    },
+    {
+        "id": 1883841611,
+        "title": "Suggest dapp: add Chainspot.io to the Eth's Ecosystem list",
+        "url": "https://github.com/ethereum/ethereum-org-website/issues/11090",
+        "repository": "ethereum/ethereum-org-website",
+        "tags": [
+            "ethereum",
+            "docs",
+            "frontend"
+        ],
+        "created_at": "2023-09-06T11:46:49Z",
+        "number": 11090
+    },
+    {
+        "id": 2855934081,
+        "title": "construct_event_filter_params improperly formats addresses as lists of lists",
+        "url": "https://github.com/ethereum/web3.py/issues/3617",
+        "repository": "ethereum/web3.py",
+        "tags": [
+            "ethereum",
+            "python",
+            "tooling"
+        ],
+        "created_at": "2025-02-16T07:20:10Z",
+        "number": 3617
+    },
+    {
+        "id": 1759130836,
+        "title": "Document Formatters",
+        "url": "https://github.com/ethereum/web3.py/issues/2994",
+        "repository": "ethereum/web3.py",
+        "tags": [
+            "ethereum",
+            "python",
+            "tooling"
+        ],
+        "created_at": "2023-06-15T15:53:41Z",
+        "number": 2994
+    },
+    {
+        "id": 618543890,
+        "title": "ContractEvent.processLog (and others?) break when used as classmethod",
+        "url": "https://github.com/ethereum/web3.py/issues/1648",
+        "repository": "ethereum/web3.py",
+        "tags": [
+            "ethereum",
+            "python",
+            "tooling"
+        ],
+        "created_at": "2020-05-14T21:22:14Z",
+        "number": 1648
+    },
+    {
+        "id": 606464527,
+        "title": "Add documentation for `TypedDict` return values of methods usable by 3rd parties",
+        "url": "https://github.com/ethereum/web3.py/issues/1628",
+        "repository": "ethereum/web3.py",
+        "tags": [
+            "ethereum",
+            "python",
+            "tooling"
+        ],
+        "created_at": "2020-04-24T17:16:31Z",
+        "number": 1628
+    },
+    {
+        "id": 350176696,
+        "title": "Clearer error on contract execution error during call()",
+        "url": "https://github.com/ethereum/web3.py/issues/1002",
+        "repository": "ethereum/web3.py",
+        "tags": [
+            "ethereum",
+            "python",
+            "tooling"
+        ],
+        "created_at": "2018-08-13T20:14:23Z",
+        "number": 1002
+    },
+    {
+        "id": 908196201,
+        "title": "feat: brownie console add a disable compilation flag",
+        "url": "https://github.com/eth-brownie/brownie/issues/1096",
+        "repository": "eth-brownie/brownie",
+        "tags": [
+            "ethereum",
+            "smartcontracts",
+            "python"
+        ],
+        "created_at": "2021-06-01T11:32:04Z",
+        "number": 1096
+    },
+    {
+        "id": 789493192,
+        "title": "Brownie Compile ignores compiling contracts without constructors in the local code",
+        "url": "https://github.com/eth-brownie/brownie/issues/936",
+        "repository": "eth-brownie/brownie",
+        "tags": [
+            "ethereum",
+            "smartcontracts",
+            "python"
+        ],
+        "created_at": "2021-01-20T00:09:36Z",
+        "number": 936
+    },
+    {
+        "id": 768228159,
+        "title": "Show available methods in a script using `brownie run`",
+        "url": "https://github.com/eth-brownie/brownie/issues/891",
+        "repository": "eth-brownie/brownie",
+        "tags": [
+            "ethereum",
+            "smartcontracts",
+            "python"
+        ],
+        "created_at": "2020-12-15T21:42:25Z",
+        "number": 891
+    },
+    {
+        "id": 722556851,
+        "title": "INTERNALERROR if ganache is not installed",
+        "url": "https://github.com/eth-brownie/brownie/issues/813",
+        "repository": "eth-brownie/brownie",
+        "tags": [
+            "ethereum",
+            "smartcontracts",
+            "python"
+        ],
+        "created_at": "2020-10-15T18:09:32Z",
+        "number": 813
+    },
+    {
+        "id": 613196742,
+        "title": "Expand logic for suppressing warnings",
+        "url": "https://github.com/eth-brownie/brownie/issues/499",
+        "repository": "eth-brownie/brownie",
+        "tags": [
+            "ethereum",
+            "smartcontracts",
+            "python"
+        ],
+        "created_at": "2020-05-06T09:59:41Z",
+        "number": 499
+    },
+    {
+        "id": 1080074402,
+        "title": "ERC721URIStorage: add internal getter for _tokenURIs",
+        "url": "https://github.com/OpenZeppelin/openzeppelin-contracts/issues/3023",
+        "repository": "OpenZeppelin/openzeppelin-contracts",
+        "tags": [
+            "ethereum",
+            "smartcontracts",
+            "solidity"
+        ],
+        "created_at": "2021-12-14T18:18:17Z",
+        "number": 3023
+    },
+    {
+        "id": 2105701744,
+        "title": "Add support for transient storage",
+        "url": "https://github.com/ethereum/fe/issues/978",
+        "repository": "ethereum/fe",
+        "tags": [
+            "ethereum",
+            "language",
+            "rust"
+        ],
+        "created_at": "2024-01-29T15:02:34Z",
+        "number": 978
+    },
+    {
+        "id": 1242900060,
+        "title": "Reject inedexed zero sized type",
+        "url": "https://github.com/ethereum/fe/issues/712",
+        "repository": "ethereum/fe",
+        "tags": [
+            "ethereum",
+            "language",
+            "rust"
+        ],
+        "created_at": "2022-05-20T09:47:58Z",
+        "number": 712
+    },
+    {
+        "id": 2888174041,
+        "title": "Make testing more verbose",
+        "url": "https://github.com/cosmos/gaia/issues/3580",
+        "repository": "cosmos/gaia",
+        "tags": [
+            "cosmos",
+            "core",
+            "go"
+        ],
+        "created_at": "2025-02-28T22:34:14Z",
+        "number": 3580
+    },
+    {
+        "id": 2075500241,
+        "title": "Method to withdraw all unstaked SOL from stake accounts",
+        "url": "https://github.com/solana-labs/solana/issues/34738",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2024-01-11T01:00:34Z",
+        "number": 34738
+    },
+    {
+        "id": 1782683893,
+        "title": "Balances are collected for transactions within a TransactionBatch that aren't locked or executed",
+        "url": "https://github.com/solana-labs/solana/issues/32346",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2023-06-30T14:59:35Z",
+        "number": 32346
+    },
+    {
+        "id": 1770262854,
+        "title": "Cleanup SnapshotConfig struct and usage",
+        "url": "https://github.com/solana-labs/solana/issues/32243",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2023-06-22T19:20:11Z",
+        "number": 32243
+    },
+    {
+        "id": 1203656797,
+        "title": "validator uses more memory than expected when metrics are enabled",
+        "url": "https://github.com/solana-labs/solana/issues/24319",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2022-04-13T18:43:03Z",
+        "number": 24319
+    },
+    {
+        "id": 804816586,
+        "title": "Decouple metrics submission from RUST_LOG",
+        "url": "https://github.com/solana-labs/solana/issues/15215",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2021-02-09T18:46:11Z",
+        "number": 15215
+    },
+    {
+        "id": 803708986,
+        "title": "Would you support the \"pong\" response in websocket api when receiving \"ping\"?",
+        "url": "https://github.com/solana-labs/solana/issues/15187",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2021-02-08T16:15:55Z",
+        "number": 15187
+    },
+    {
+        "id": 756791959,
+        "title": "Missing invoke translation test",
+        "url": "https://github.com/solana-labs/solana/issues/13955",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2020-12-04T04:30:42Z",
+        "number": 13955
+    },
+    {
+        "id": 668074560,
+        "title": "`solana vote-account` authorized-voter display is not clear",
+        "url": "https://github.com/solana-labs/solana/issues/11273",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2020-07-29T19:06:51Z",
+        "number": 11273
+    },
+    {
+        "id": 570680185,
+        "title": "`solana stakes <vote pubkey>` should cleanly handle a non-vote pubkey",
+        "url": "https://github.com/solana-labs/solana/issues/8441",
+        "repository": "solana-labs/solana",
+        "tags": [
+            "solana",
+            "core",
+            "rust"
+        ],
+        "created_at": "2020-02-25T16:09:03Z",
+        "number": 8441
+    },
+    {
+        "id": 2714438515,
+        "title": "[token-js] InitializeMint without FreezeAuthority breaks decodeInitializeMintInstruction",
+        "url": "https://github.com/solana-labs/solana-program-library/issues/7549",
+        "repository": "solana-labs/solana-program-library",
+        "tags": [
+            "solana",
+            "smartcontracts",
+            "rust"
+        ],
+        "created_at": "2024-12-03T09:19:51Z",
+        "number": 7549
+    },
+    {
+        "id": 2234532077,
+        "title": "Update to ESLint 9.0",
+        "url": "https://github.com/solana-labs/solana-program-library/issues/6562",
+        "repository": "solana-labs/solana-program-library",
+        "tags": [
+            "solana",
+            "smartcontracts",
+            "rust"
+        ],
+        "created_at": "2024-04-10T00:38:21Z",
+        "number": 6562
+    },
+    {
+        "id": 2034376334,
+        "title": "transfer hook: Add JS support for managing hook programs",
+        "url": "https://github.com/solana-labs/solana-program-library/issues/5974",
+        "repository": "solana-labs/solana-program-library",
+        "tags": [
+            "solana",
+            "smartcontracts",
+            "rust"
+        ],
+        "created_at": "2023-12-10T13:41:47Z",
+        "number": 5974
+    },
+    {
+        "id": 1939804132,
+        "title": "[spl-type-length-value]: `u64` padding not properly supported",
+        "url": "https://github.com/solana-labs/solana-program-library/issues/5518",
+        "repository": "solana-labs/solana-program-library",
+        "tags": [
+            "solana",
+            "smartcontracts",
+            "rust"
+        ],
+        "created_at": "2023-10-12T11:40:33Z",
+        "number": 5518
+    },
+    {
+        "id": 1297889896,
+        "title": "[spl-token]: getOrCreateAssociatedTokenAccount throws TokenAccountNotFoundError for different errors",
+        "url": "https://github.com/solana-labs/solana-program-library/issues/3326",
+        "repository": "solana-labs/solana-program-library",
+        "tags": [
+            "solana",
+            "smartcontracts",
+            "rust"
+        ],
+        "created_at": "2022-07-07T18:24:20Z",
+        "number": 3326
+    },
+    {
+        "id": 2661291513,
+        "title": "Discover() will not run if listening on any address with an explicit bind=0.0.0.0",
+        "url": "https://github.com/bitcoin/bitcoin/issues/31293",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2024-11-15T08:54:02Z",
+        "number": 31293
+    },
+    {
+        "id": 1941676471,
+        "title": "test: Write assumeutxo tests",
+        "url": "https://github.com/bitcoin/bitcoin/issues/28648",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2023-10-13T10:24:00Z",
+        "number": 28648
+    },
+    {
+        "id": 1826219268,
+        "title": "test: 999 of 999 multisig",
+        "url": "https://github.com/bitcoin/bitcoin/issues/28179",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2023-07-28T10:56:14Z",
+        "number": 28179
+    },
+    {
+        "id": 1359424165,
+        "title": "combinerawtransaction confusing with distinct transactions",
+        "url": "https://github.com/bitcoin/bitcoin/issues/25980",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2022-09-01T21:21:36Z",
+        "number": 25980
+    },
+    {
+        "id": 1063387071,
+        "title": "init: torcontrol argument should be validated",
+        "url": "https://github.com/bitcoin/bitcoin/issues/23589",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2021-11-25T10:11:19Z",
+        "number": 23589
+    },
+    {
+        "id": 524388328,
+        "title": "gen-manpages output depends on build options, so needs to check them",
+        "url": "https://github.com/bitcoin/bitcoin/issues/17506",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2019-11-18T14:04:12Z",
+        "number": 17506
+    },
+    {
+        "id": 513520983,
+        "title": "contrib: Autogenerate bash completion",
+        "url": "https://github.com/bitcoin/bitcoin/issues/17289",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2019-10-28T19:51:28Z",
+        "number": 17289
+    },
+    {
+        "id": 507009636,
+        "title": "GUI event loop should be block free",
+        "url": "https://github.com/bitcoin/bitcoin/issues/17145",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2019-10-15T05:11:34Z",
+        "number": 17145
+    },
+    {
+        "id": 501439297,
+        "title": "contrib: makeseeds.py improvements",
+        "url": "https://github.com/bitcoin/bitcoin/issues/17020",
+        "repository": "bitcoin/bitcoin",
+        "tags": [
+            "bitcoin",
+            "core",
+            "cpp"
+        ],
+        "created_at": "2019-10-02T11:46:27Z",
+        "number": 17020
+    },
+    {
+        "id": 2897884181,
+        "title": "[bug]: missing description to wtclient command \"session\" and \"terminate\" command option",
+        "url": "https://github.com/lightningnetwork/lnd/issues/9583",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2025-03-05T17:01:05Z",
+        "number": 9583
+    },
+    {
+        "id": 2813260250,
+        "title": "[feature]:  Expose negotiated confirmation count for pending 'channel open' transactions",
+        "url": "https://github.com/lightningnetwork/lnd/issues/9452",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2025-01-27T15:00:15Z",
+        "number": 9452
+    },
+    {
+        "id": 2473223928,
+        "title": "[feature]: Return structured information when BatchOpenChannel fails",
+        "url": "https://github.com/lightningnetwork/lnd/issues/9016",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2024-08-19T12:20:13Z",
+        "number": 9016
+    },
+    {
+        "id": 2328931255,
+        "title": "[bug]: externalhosts does not advertize IPv4+IPv6 domain",
+        "url": "https://github.com/lightningnetwork/lnd/issues/8801",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2024-06-01T05:37:44Z",
+        "number": 8801
+    },
+    {
+        "id": 2174497394,
+        "title": "[bug]: lncli listpayments --count_total_payments should honor --creation_date_start --creation_date_end",
+        "url": "https://github.com/lightningnetwork/lnd/issues/8530",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2024-03-07T18:30:12Z",
+        "number": 8530
+    },
+    {
+        "id": 2127462335,
+        "title": "[feature]: BumpFee: return raw tx hex on success",
+        "url": "https://github.com/lightningnetwork/lnd/issues/8470",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2024-02-09T16:21:12Z",
+        "number": 8470
+    },
+    {
+        "id": 1992076855,
+        "title": "lnd: remove deprecated endpoints `sendpayment` and `sendtoroute`",
+        "url": "https://github.com/lightningnetwork/lnd/issues/8175",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2023-11-14T06:29:13Z",
+        "number": 8175
+    },
+    {
+        "id": 1885695732,
+        "title": "[feature]: allow configuring upfront shutdown address in `lnd.conf`",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7964",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2023-09-07T11:22:53Z",
+        "number": 7964
+    },
+    {
+        "id": 1803378885,
+        "title": "[bug]: `fee_limit_percent` missing in `SendPaymentV2`",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7832",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2023-07-13T16:33:04Z",
+        "number": 7832
+    },
+    {
+        "id": 1744873912,
+        "title": "[feature]: ask password quickly after start",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7749",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2023-06-07T01:36:33Z",
+        "number": 7749
+    },
+    {
+        "id": 1532332240,
+        "title": "[bug]: lncli listchaintxns in reversed order",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7316",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2023-01-13T13:48:26Z",
+        "number": 7316
+    },
+    {
+        "id": 1470618455,
+        "title": "[feature]: New rpc for generating pre-image and corresponding hash",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7220",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-12-01T03:45:06Z",
+        "number": 7220
+    },
+    {
+        "id": 1452651191,
+        "title": "[feature]: give payment hash in subscribehtlcevents",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7165",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-11-17T03:52:20Z",
+        "number": 7165
+    },
+    {
+        "id": 1437745668,
+        "title": "[feature]: Allow persisting dynamic configured alias when not set in lnd.conf or arguments",
+        "url": "https://github.com/lightningnetwork/lnd/issues/7123",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-11-07T04:22:45Z",
+        "number": 7123
+    },
+    {
+        "id": 1304067090,
+        "title": "rpc: enable the RPC middleware API to return \"rich\" errors ",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6729",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-07-14T00:13:44Z",
+        "number": 6729
+    },
+    {
+        "id": 1301131197,
+        "title": "replace ioutil.WriteFile usage with Fsync and friends",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6720",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-07-11T19:31:48Z",
+        "number": 6720
+    },
+    {
+        "id": 1289451089,
+        "title": "build+log: use the Critifalf logging function more liberally where it makes sense",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6693",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-06-30T01:00:55Z",
+        "number": 6693
+    },
+    {
+        "id": 1254190865,
+        "title": "Sending incorrect onion error for \"peer offline\"",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6603",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-05-31T17:44:57Z",
+        "number": 6603
+    },
+    {
+        "id": 1254093278,
+        "title": "lncli: No routehints argument defined for sendpayment & queryroutes",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6601",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-05-31T16:11:23Z",
+        "number": 6601
+    },
+    {
+        "id": 1250536256,
+        "title": "Document Sphinx replay DB (Decayed Log Db)",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6584",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-05-27T09:16:54Z",
+        "number": 6584
+    },
+    {
+        "id": 1169091369,
+        "title": "discovery+lnwire: add support for DNS host names in NodeAnnouncement msg",
+        "url": "https://github.com/lightningnetwork/lnd/issues/6337",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2022-03-15T01:56:22Z",
+        "number": 6337
+    },
+    {
+        "id": 1052790506,
+        "title": "Only log \"insufficient bandwidth\" if this applies to all channels to that peer",
+        "url": "https://github.com/lightningnetwork/lnd/issues/5972",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2021-11-13T22:38:40Z",
+        "number": 5972
+    },
+    {
+        "id": 1045118981,
+        "title": "Add Channel ID parametre to ForwardingHistoryRequest",
+        "url": "https://github.com/lightningnetwork/lnd/issues/5932",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2021-11-04T19:20:51Z",
+        "number": 5932
+    },
+    {
+        "id": 968520035,
+        "title": "lnd should exit with no-success error code when automatically shut down due to bitcoind problems",
+        "url": "https://github.com/lightningnetwork/lnd/issues/5625",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2021-08-12T10:16:54Z",
+        "number": 5625
+    },
+    {
+        "id": 955432393,
+        "title": "rpcperm: rpc state/status interceptor should return gRPC error codes",
+        "url": "https://github.com/lightningnetwork/lnd/issues/5586",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2021-07-29T03:59:44Z",
+        "number": 5586
+    },
+    {
+        "id": 955067756,
+        "title": "lncli unlock --stdin uses newline instead of EOF as a terminator",
+        "url": "https://github.com/lightningnetwork/lnd/issues/5584",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2021-07-28T17:15:42Z",
+        "number": 5584
+    },
+    {
+        "id": 676391382,
+        "title": "Avoid adding all private channels with the same peer as hop hints in new invoices",
+        "url": "https://github.com/lightningnetwork/lnd/issues/4520",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2020-08-10T20:18:17Z",
+        "number": 4520
+    },
+    {
+        "id": 541109888,
+        "title": "[Feature Request] add --cltv-expiry option to addinvoice of lncli",
+        "url": "https://github.com/lightningnetwork/lnd/issues/3866",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2019-12-20T17:29:54Z",
+        "number": 3866
+    },
+    {
+        "id": 339234898,
+        "title": "lnd updatechanpolicy has confusing --help",
+        "url": "https://github.com/lightningnetwork/lnd/issues/1523",
+        "repository": "lightningnetwork/lnd",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "go"
+        ],
+        "created_at": "2018-07-08T15:32:45Z",
+        "number": 1523
+    },
+    {
+        "id": 2018151487,
+        "title": "Documentation of listsendpays",
+        "url": "https://github.com/ElementsProject/lightning/issues/6909",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2023-11-30T08:44:16Z",
+        "number": 6909
+    },
+    {
+        "id": 1377125334,
+        "title": "`invoice_payment` hook doesn't get replayed when lightningd is restarted",
+        "url": "https://github.com/ElementsProject/lightning/issues/5603",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2022-09-18T17:27:56Z",
+        "number": 5603
+    },
+    {
+        "id": 1299493017,
+        "title": "Turn on strict tables for SQLITE3 when running integration tests",
+        "url": "https://github.com/ElementsProject/lightning/issues/5390",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2022-07-08T22:38:09Z",
+        "number": 5390
+    },
+    {
+        "id": 1179319766,
+        "title": "Allow setting fee limits on offerout",
+        "url": "https://github.com/ElementsProject/lightning/issues/5127",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2022-03-24T10:36:46Z",
+        "number": 5127
+    },
+    {
+        "id": 1048075229,
+        "title": "plugin-bcli returning \"\\n\" instead of line break in the logfile",
+        "url": "https://github.com/ElementsProject/lightning/issues/4912",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2021-11-09T01:01:50Z",
+        "number": 4912
+    },
+    {
+        "id": 971915161,
+        "title": "channel leases: restrict channel fee updates for leased channels to be less than committed rates",
+        "url": "https://github.com/ElementsProject/lightning/issues/4720",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2021-08-16T16:39:42Z",
+        "number": 4720
+    },
+    {
+        "id": 699913466,
+        "title": "Time out on non-responsive opens",
+        "url": "https://github.com/ElementsProject/lightning/issues/4043",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2020-09-12T00:54:35Z",
+        "number": 4043
+    },
+    {
+        "id": 610442266,
+        "title": "Expose a Channel's Routing Fee Setting via `listpeers`",
+        "url": "https://github.com/ElementsProject/lightning/issues/3683",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2020-04-30T22:56:16Z",
+        "number": 3683
+    },
+    {
+        "id": 605696445,
+        "title": "Add new notifications for plugins",
+        "url": "https://github.com/ElementsProject/lightning/issues/3662",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2020-04-23T17:00:08Z",
+        "number": 3662
+    },
+    {
+        "id": 569128896,
+        "title": "feature request: config option to change default fundchannel feerate",
+        "url": "https://github.com/ElementsProject/lightning/issues/3542",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2020-02-21T19:01:42Z",
+        "number": 3542
+    },
+    {
+        "id": 563276904,
+        "title": "cleanup: Use the `-rpcwait` when waiting for bitcoind to warm up",
+        "url": "https://github.com/ElementsProject/lightning/issues/3505",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2020-02-11T15:17:46Z",
+        "number": 3505
+    },
+    {
+        "id": 524413980,
+        "title": "Setting manual channel closure fee (question)",
+        "url": "https://github.com/ElementsProject/lightning/issues/3270",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2019-11-18T14:47:18Z",
+        "number": 3270
+    },
+    {
+        "id": 512671959,
+        "title": "Pass daemon errors back to RPC handler",
+        "url": "https://github.com/ElementsProject/lightning/issues/3209",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2019-10-25T19:03:25Z",
+        "number": 3209
+    },
+    {
+        "id": 512669591,
+        "title": "Plugin notification for when UTXOs are spent?",
+        "url": "https://github.com/ElementsProject/lightning/issues/3207",
+        "repository": "ElementsProject/lightning",
+        "tags": [
+            "bitcoin",
+            "lightning",
+            "c"
+        ],
+        "created_at": "2019-10-25T18:58:14Z",
+        "number": 3207
+    },
+    {
+        "id": 2257411655,
+        "title": "docs: add GOLOG_LOG_LEVEL debug logging info",
+        "url": "https://github.com/ipfs/kubo/issues/10409",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2024-04-22T20:31:15Z",
+        "number": 10409
+    },
+    {
+        "id": 1735173867,
+        "title": "secp256k1 key support is missing pem-pkcs8-cleartext import/export",
+        "url": "https://github.com/ipfs/kubo/issues/9912",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2023-05-31T23:31:30Z",
+        "number": 9912
+    },
+    {
+        "id": 1421694409,
+        "title": "ipfs get doesn't work on files with \"]\" in the name",
+        "url": "https://github.com/ipfs/kubo/issues/9370",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2022-10-25T01:21:01Z",
+        "number": 9370
+    },
+    {
+        "id": 1421692749,
+        "title": "Unable to retrieve files with \"]\"",
+        "url": "https://github.com/ipfs/kubo/issues/9369",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2022-10-25T01:18:10Z",
+        "number": 9369
+    },
+    {
+        "id": 1248578165,
+        "title": "Gateway directory listing should be more responsive and be more usefull about it's use of space",
+        "url": "https://github.com/ipfs/kubo/issues/8995",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2022-05-25T18:59:16Z",
+        "number": 8995
+    },
+    {
+        "id": 1247240225,
+        "title": "ipfs config replace can result in a broken configuration.",
+        "url": "https://github.com/ipfs/kubo/issues/8993",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2022-05-24T23:58:49Z",
+        "number": 8993
+    },
+    {
+        "id": 1119643173,
+        "title": "Add pub/sub example into go-ipfs-as-a-library",
+        "url": "https://github.com/ipfs/kubo/issues/8708",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2022-01-31T16:21:09Z",
+        "number": 8708
+    },
+    {
+        "id": 1039041809,
+        "title": "Update relevant configuration to use optional types",
+        "url": "https://github.com/ipfs/kubo/issues/8531",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2021-10-28T23:55:30Z",
+        "number": 8531
+    },
+    {
+        "id": 1175986617,
+        "title": "Gateway: dynamic image for social sharing",
+        "url": "https://github.com/ipfs/kubo/issues/8811",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2021-06-23T15:44:19Z",
+        "number": 8811
+    },
+    {
+        "id": 809399539,
+        "title": "MFS remote pinning policy: log ERROR if pin failed",
+        "url": "https://github.com/ipfs/kubo/issues/7917",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2021-02-16T15:16:41Z",
+        "number": 7917
+    },
+    {
+        "id": 155320090,
+        "title": "'Path' type for commands lib Arguments",
+        "url": "https://github.com/ipfs/kubo/issues/2721",
+        "repository": "ipfs/kubo",
+        "tags": [
+            "ipfs",
+            "web3",
+            "go"
+        ],
+        "created_at": "2016-05-17T17:46:40Z",
+        "number": 2721
+    },
+    {
+        "id": 1200253814,
+        "title": "Allow WETH when adding liquidity to an existing LP position",
+        "url": "https://github.com/Uniswap/interface/issues/3705",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2022-04-11T16:53:51Z",
+        "number": 3705
+    },
+    {
+        "id": 1157803703,
+        "title": "widgets: decimal input 0 not getting new quotes",
+        "url": "https://github.com/Uniswap/interface/issues/3412",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2022-03-02T23:36:08Z",
+        "number": 3412
+    },
+    {
+        "id": 1149950499,
+        "title": "disabled lists have weird child opacity on their popovers",
+        "url": "https://github.com/Uniswap/interface/issues/3359",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2022-02-25T01:45:51Z",
+        "number": 3359
+    },
+    {
+        "id": 1120815786,
+        "title": "widgets: price fetching infinite hang",
+        "url": "https://github.com/Uniswap/interface/issues/3212",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2022-02-01T15:12:11Z",
+        "number": 3212
+    },
+    {
+        "id": 1066412665,
+        "title": "Standardize proposal numbers 1-9",
+        "url": "https://github.com/Uniswap/interface/issues/2866",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-11-29T19:25:49Z",
+        "number": 2866
+    },
+    {
+        "id": 1066381516,
+        "title": "Wrap stETH",
+        "url": "https://github.com/Uniswap/interface/issues/2864",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-11-29T18:54:28Z",
+        "number": 2864
+    },
+    {
+        "id": 1030803406,
+        "title": "price in price bar should be the execution price, not price of 1 base",
+        "url": "https://github.com/Uniswap/interface/issues/2648",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-10-19T22:44:32Z",
+        "number": 2648
+    },
+    {
+        "id": 998210893,
+        "title": "prompt users to update browser version instead of filing an issue",
+        "url": "https://github.com/Uniswap/interface/issues/2367",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-09-16T13:23:27Z",
+        "number": 2367
+    },
+    {
+        "id": 995292841,
+        "title": "gnosis SafeApp introduces a 300ms pageload timeout",
+        "url": "https://github.com/Uniswap/interface/issues/2338",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-09-13T20:25:36Z",
+        "number": 2338
+    },
+    {
+        "id": 952058215,
+        "title": "Crash report: `Error: Invariant failed` - input overflows uint256 max",
+        "url": "https://github.com/Uniswap/interface/issues/2103",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-07-24T11:40:24Z",
+        "number": 2103
+    },
+    {
+        "id": 906880073,
+        "title": "improve and approve translations",
+        "url": "https://github.com/Uniswap/interface/issues/1759",
+        "repository": "Uniswap/uniswap-interface",
+        "tags": [
+            "defi",
+            "frontend",
+            "react"
+        ],
+        "created_at": "2021-05-30T20:58:20Z",
+        "number": 1759
+    }
+]
