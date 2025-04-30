@@ -19,6 +19,7 @@ const HomePage: React.FC = () => {
   const [filteredIssues, setFilteredIssues] = useState<Issue[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   // Fetch issues data on component mount
   useEffect(() => {
@@ -26,6 +27,10 @@ const HomePage: React.FC = () => {
       try {
         setLoading(true);
         const response = await fetch('/issues.json');
+        const lastModifiedHeader = response.headers.get('Last-Modified');
+        if (lastModifiedHeader) {
+          setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
+        }
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -84,9 +89,11 @@ const HomePage: React.FC = () => {
   return (
     <div className="container mx-auto p-4 font-sans">
       <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-2">Crypto/Web3 Good First Issues</h1>
+        <h1 className="text-4xl font-bold mb-2">Good First Issues</h1>
         <p className="text-lg text-gray-600">Find beginner-friendly issues in popular blockchain projects.</p>
-        <p className="text-sm text-gray-500 mt-2">Data last updated based on the latest run of the fetch script.</p>
+        <p className="text-sm text-gray-500 mt-2 italic font-bold">
+          {lastUpdated ? `Data last updated: ${lastUpdated}` : 'Loading last update...'}
+        </p>
       </header>
 
       {error && (
