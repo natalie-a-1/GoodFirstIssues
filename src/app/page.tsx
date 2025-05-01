@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { AppleButton } from '@/components/ui/apple-button';
 
 interface Issue {
@@ -26,40 +26,34 @@ const HomePage: React.FC = () => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Fetch issues data on component mount
+  // Fetch issues data and last update time on component mount
   useEffect(() => {
     const fetchIssuesData = async () => {
       try {
         setLoading(true);
-        // Construct a relative URL so it works both locally and when served from a
-        // sub-folder on GitHub Pages. Using a relative path avoids having to know
-        // the base path at runtime.
         const fetchUrl = 'issues.json';
         console.log(`Fetching issues from: ${fetchUrl}`);
         const response = await fetch(fetchUrl);
-        
-        // Try to fetch the last update time from our last-update.json file
+
+        // Fetch the last update time from our new API endpoint
         try {
-          const lastUpdateResponse = await fetch('last-update.json');
+          const lastUpdateResponse = await fetch('/api/get-last-update');
           if (lastUpdateResponse.ok) {
-            const lastUpdateData = await lastUpdateResponse.json() as { lastUpdated: string };
+            const lastUpdateData = await lastUpdateResponse.json() as { lastUpdated: string | null };
             if (lastUpdateData.lastUpdated) {
               setLastUpdated(new Date(lastUpdateData.lastUpdated).toLocaleString());
+            } else {
+              console.log('No last update timestamp found in KV.');
+              // Optionally set a default message or leave it null
+              setLastUpdated(null); 
             }
           } else {
-            // Fallback to using the Last-Modified header if available
-            const lastModifiedHeader = response.headers.get('Last-Modified');
-            if (lastModifiedHeader) {
-              setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
-            }
+            console.warn('Failed to fetch last update time from API:', lastUpdateResponse.status);
+            setLastUpdated(null); // Clear if fetch failed
           }
         } catch (error) {
-          console.warn('Error fetching last update time:', error);
-          // Fallback to using the Last-Modified header if available
-          const lastModifiedHeader = response.headers.get('Last-Modified');
-          if (lastModifiedHeader) {
-            setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
-          }
+          console.error('Error fetching last update time from API:', error);
+          setLastUpdated(null); // Clear on error
         }
         
         if (!response.ok) {
@@ -151,11 +145,11 @@ const HomePage: React.FC = () => {
   };
 
   // Group tags into categories
-  const tagCategoryMap: Record<string, string[]> = {
+  const tagCategoryMap = useMemo(() => ({
     "Blockchains": ["ethereum", "polkadot", "cosmos", "solana", "bitcoin", "ipfs", "defi", "web3"],
     "Languages": ["go", "rust", "javascript", "python", "solidity", "cpp", "c", "react"],
     "Domains": ["core", "consensus", "docs", "frontend", "tooling", "smartcontracts", "language", "infrastructure", "nft", "lightning"]
-  };
+  }), []);
 
   // Apply both tag filters and search query
   const applyFilters = useCallback((currentSelectedTags: string[], query: string) => {
@@ -257,9 +251,13 @@ const HomePage: React.FC = () => {
         <p className="text-l text-muted-foreground max-w-2xl mx-auto">
           Find beginner-friendly issues in popular blockchain projects.
         </p>
-        {lastUpdated && (
+        {lastUpdated ? (
           <p className="text-sm text-muted-foreground mt-4 italic font-bold">
             Last updated: {lastUpdated}
+          </p>
+        ) : (
+          <p className="text-sm text-muted-foreground mt-4 italic font-bold">
+            Last updated time unavailable.
           </p>
         )}
         
