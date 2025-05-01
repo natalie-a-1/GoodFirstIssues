@@ -80,6 +80,28 @@ This project is configured for deployment on Vercel. To deploy:
 3. Vercel will automatically detect the Next.js configuration
 4. Your site will be deployed and available at your Vercel URL
 
+## Environment Variables
+
+The following environment variables need to be set in your Vercel project:
+
+- `CRON_SECRET_KEY`: A secret key to secure the cron job API endpoint
+- `GITHUB_TOKEN`: GitHub personal access token to avoid rate limiting when fetching issues
+
+To set these variables in Vercel:
+1. Go to your Vercel project dashboard
+2. Navigate to Settings > Environment Variables
+3. Add the variables with their respective values
+
+## Cron Job
+
+This project includes a daily cron job that automatically updates the GitHub issues. The cron job:
+1. Runs every day at midnight UTC
+2. Fetches the latest 'good first issues' from various repositories
+3. Updates the issues.json file
+4. Updates the last-update.json file with the current timestamp
+
+The cron job is configured in `vercel.json` and implemented in `/api/cron/update-issues`.
+
 ---
 
 ## 🌟 Spread the Word

@@ -35,12 +35,33 @@ const HomePage: React.FC = () => {
         // sub-folder on GitHub Pages. Using a relative path avoids having to know
         // the base path at runtime.
         const fetchUrl = 'issues.json';
-        console.log(`Fetching issues from: ${fetchUrl}`); // Log the URL being fetched
+        console.log(`Fetching issues from: ${fetchUrl}`);
         const response = await fetch(fetchUrl);
-        const lastModifiedHeader = response.headers.get('Last-Modified');
-        if (lastModifiedHeader) {
-          setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
+        
+        // Try to fetch the last update time from our last-update.json file
+        try {
+          const lastUpdateResponse = await fetch('last-update.json');
+          if (lastUpdateResponse.ok) {
+            const lastUpdateData = await lastUpdateResponse.json() as { lastUpdated: string };
+            if (lastUpdateData.lastUpdated) {
+              setLastUpdated(new Date(lastUpdateData.lastUpdated).toLocaleString());
+            }
+          } else {
+            // Fallback to using the Last-Modified header if available
+            const lastModifiedHeader = response.headers.get('Last-Modified');
+            if (lastModifiedHeader) {
+              setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
+            }
+          }
+        } catch (error) {
+          console.warn('Error fetching last update time:', error);
+          // Fallback to using the Last-Modified header if available
+          const lastModifiedHeader = response.headers.get('Last-Modified');
+          if (lastModifiedHeader) {
+            setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
+          }
         }
+        
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

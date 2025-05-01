@@ -1,5 +1,14 @@
 {
   "buildCommand": "next build",
   "installCommand": "pnpm install",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "crons": [
+    {
+      "path": "/api/cron/update-issues",
+      "schedule": "0 0 * * *"
+    }
+  ],
+  "github": {
+    "silent": true
+  }
 } 
