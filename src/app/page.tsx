@@ -11,6 +11,8 @@ interface Issue {
   tags: string[];
   created_at: string;
   number: number;
+  stars?: number; // Optional stars count for the repository
+  forks?: number; // Optional forks count for the repository
 }
 
 const HomePage: React.FC = () => {
@@ -50,6 +52,9 @@ const HomePage: React.FC = () => {
 
         setFilteredIssues(data); // Initially show all issues
         setError(null);
+        
+        // After loading issues, fetch repository details
+        fetchRepositoryDetails(data);
       } catch (e) {
         console.error("Error fetching issues:", e);
         setError('Failed to load issues. Please try running the fetch script again or check the console.');
@@ -63,6 +68,57 @@ const HomePage: React.FC = () => {
 
     fetchIssuesData();
   }, []);
+
+  // Function to fetch repository details (stars and forks)
+  const fetchRepositoryDetails = async (issuesData: Issue[]) => {
+    // Get unique repositories to avoid duplicate API calls
+    const uniqueRepos = [...new Set(issuesData.map(issue => issue.repository))];
+    
+    // Create a map to store repo details
+    const repoDetails: Record<string, { stars: number, forks: number }> = {};
+    
+    // Use Promise.all to fetch all repository details in parallel
+    try {
+      const repoPromises = uniqueRepos.map(async (repo) => {
+        // Use GitHub API to get repository details
+        const [owner, name] = repo.split('/');
+        const response = await fetch(`https://api.github.com/repos/${owner}/${name}`);
+        
+        if (response.ok) {
+          const data = await response.json() as { 
+            stargazers_count: number, 
+            forks_count: number 
+          };
+          
+          repoDetails[repo] = {
+            stars: data.stargazers_count,
+            forks: data.forks_count
+          };
+        }
+      });
+      
+      // Wait for all requests to complete
+      await Promise.all(repoPromises);
+      
+      // Update issues with repository details
+      const updatedIssues = issuesData.map(issue => ({
+        ...issue,
+        stars: repoDetails[issue.repository]?.stars,
+        forks: repoDetails[issue.repository]?.forks
+      }));
+      
+      setIssues(updatedIssues);
+      setFilteredIssues(prevFilteredIssues => 
+        prevFilteredIssues.map(issue => ({
+          ...issue,
+          stars: repoDetails[issue.repository]?.stars,
+          forks: repoDetails[issue.repository]?.forks
+        }))
+      );
+    } catch (error) {
+      console.error("Error fetching repository details:", error);
+    }
+  };
 
   // Apply all filters (tags and search query)
   useEffect(() => {
@@ -310,7 +366,7 @@ const HomePage: React.FC = () => {
                           {issue.title}
                         </a>
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-2">
+                      <p className="text-sm text-muted-foreground mb-1">
                         <a 
                           href={`https://github.com/${issue.repository}`} 
                           target="_blank" 
@@ -320,6 +376,42 @@ const HomePage: React.FC = () => {
                           {issue.repository}
                         </a> • #{issue.number}
                       </p>
+                      
+                      {(issue.stars !== undefined || issue.forks !== undefined) && (
+                        <p className="text-xs text-muted-foreground mb-2 flex items-center gap-3">
+                          {issue.stars !== undefined && (
+                            <span className="flex items-center">
+                              <svg 
+                                className="text-amber-400 dark:text-amber-300 inline-block mr-1" 
+                                width="12" 
+                                height="12" 
+                                viewBox="0 0 24 24" 
+                                fill="currentColor" 
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                              </svg>
+                              <span>{issue.stars.toLocaleString()}</span>
+                            </span>
+                          )}
+                          {issue.forks !== undefined && (
+                            <span className="flex items-center">
+                              <svg 
+                                className="text-blue-500 dark:text-blue-400 inline-block mr-1" 
+                                width="12" 
+                                height="12" 
+                                viewBox="0 0 16 16"
+                                fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+                              </svg>
+                              <span>{issue.forks.toLocaleString()}</span>
+                            </span>
+                          )}
+                        </p>
+                      )}
+                      
                       <p className="text-sm text-muted-foreground mb-4">
                         {new Date(issue.created_at).toLocaleDateString('en-US', {
                           year: 'numeric',
