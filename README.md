@@ -1,4 +1,4 @@
-# ✨ **Crypto & Web3 Good-First-Issues Finder**
+# ✨ **Crypto & Web3 Good First Issues**
 
 > "The best way to learn is by **building together**." — every open-source maintainer ever
 
@@ -7,6 +7,8 @@ Welcome to the one-stop hub that connects **curious newcomers** with **beginner-
 Our mission is simple:
 
 **🔓 Break down barriers → 🛠️ empower first-time contributors → 🌍 grow the decentralised ecosystem.**
+
+[🌐 **Live Site – natalie-a-1.github.io/GoodFirstIssues/**](https://natalie-a-1.github.io/GoodFirstIssues/)
 
 ---
 
@@ -83,5 +85,5 @@ Together, we're lowering the barrier to Web3 — one good first issue at a time.
 
 ---
 
-Made with ❤️ 
+Made with ❤️ by open-source contributors across the globe.
 
