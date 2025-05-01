@@ -129,11 +129,11 @@ const HomePage: React.FC = () => {
   });
 
   return (
-    <div className="container mx-auto p-4 font-sans">
-      <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-2">Good First Issues</h1>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 font-sans">
+      <header className="mb-12 text-center border-b pb-8">
+        <h1 className="text-5xl font-extrabold mb-4">Good First Issues</h1>
         <p className="text-lg text-gray-600">Find beginner-friendly issues in popular blockchain projects.</p>
-        <p className="text-sm text-gray-500 mt-2 italic font-bold">
+        <p className="text-sm text-gray-500 mt-2">
           {lastUpdated ? `Data last updated: ${lastUpdated}` : 'Loading last update...'}
         </p>
       </header>
@@ -145,10 +145,10 @@ const HomePage: React.FC = () => {
         </div>
       )}
 
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Filters Section */}
-        <aside className="w-full md:w-1/4">
-          <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Filter by Tag</h2>
+        <aside className="w-full lg:w-1/4 bg-white p-6 rounded-lg shadow">
+          <h2 className="text-xs font-semibold text-gray-500 uppercase mb-4">Filter by Tag</h2>
           {loading ? (
             <p>Loading tags...</p>
           ) : allTags.length > 0 ? (
@@ -156,7 +156,7 @@ const HomePage: React.FC = () => {
               {Object.entries(categorizedTags).map(([category, tags]) =>
                 tags.length > 0 ? (
                   <div key={category} className="mb-4">
-                    <h3 className="text-lg font-semibold">{category}</h3>
+                    <h3 className="text-sm font-semibold text-gray-700 uppercase mt-4 mb-2">{category}</h3>
                     <div className="space-y-2 ml-4">
                       {tags.map(tag => (
                         <div key={tag} className="flex items-center">
@@ -183,8 +183,8 @@ const HomePage: React.FC = () => {
         </aside>
 
         {/* Issues List Section */}
-        <main className="w-full md:w-3/4">
-          <div className="flex items-center justify-between mb-4">
+        <main className="w-full lg:w-3/4 bg-white p-6 rounded-lg shadow">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
             <h2 className="text-2xl font-semibold border-b pb-2">Issues ({filteredIssues.length})</h2>
             <div className="flex items-center space-x-2">
               <label htmlFor="sortOrder" className="text-sm font-medium">Sort by date:</label>
@@ -202,10 +202,10 @@ const HomePage: React.FC = () => {
           {loading ? (
             <p>Loading issues...</p>
           ) : filteredIssues.length > 0 ? (
-            <ul className="space-y-4">
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {sortedIssues.map(issue => (
-                <li key={issue.id} className="border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow bg-white">
-                  <h3 className="text-xl font-medium mb-1">
+                <li key={issue.id} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  <h3 className="text-lg font-semibold mb-2">
                     <a href={issue.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                       {issue.title}
                     </a>
@@ -213,14 +213,14 @@ const HomePage: React.FC = () => {
                   <p className="text-sm text-gray-500 mb-2">
                     <a href={`https://github.com/${issue.repository}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
                       {issue.repository}
-                    </a> - Issue #{issue.number}
+                    </a> • #{issue.number}
                   </p>
                   <p className="text-sm text-gray-500 mb-2">
                     Opened: {new Date(issue.created_at).toLocaleDateString()}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {issue.tags.map(tag => (
-                      <span key={tag} className="bg-gray-200 text-gray-700 text-xs font-medium px-2.5 py-0.5 rounded capitalize">
+                      <span key={tag} className="inline-flex items-center px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
                         {tag}
                       </span>
                     ))}
