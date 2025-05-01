@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
+// Inter is a good alternative to SF Pro while being freely available
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 })
 
 // Updated metadata for the specific application
@@ -19,9 +21,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      {/* Removed default dark mode, added font-sans for better readability */}
-      <body className={`${geistSans.variable} font-sans antialiased`}>{children}</body>
+    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
+      <body className="antialiased bg-background text-foreground min-h-screen">{children}</body>
     </html>
   )
 }
