@@ -20,6 +20,7 @@ const HomePage: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   // Fetch issues data on component mount
   useEffect(() => {
@@ -120,6 +121,13 @@ const HomePage: React.FC = () => {
     categorizedTags["Other"] = otherTags;
   }
 
+  // Compute sorted issues by created date
+  const sortedIssues = filteredIssues.slice().sort((a, b) => {
+    const aTime = new Date(a.created_at).getTime();
+    const bTime = new Date(b.created_at).getTime();
+    return sortOrder === 'asc' ? aTime - bTime : bTime - aTime;
+  });
+
   return (
     <div className="container mx-auto p-4 font-sans">
       <header className="mb-8 text-center">
@@ -176,12 +184,26 @@ const HomePage: React.FC = () => {
 
         {/* Issues List Section */}
         <main className="w-full md:w-3/4">
-          <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Issues ({filteredIssues.length})</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-semibold border-b pb-2">Issues ({filteredIssues.length})</h2>
+            <div className="flex items-center space-x-2">
+              <label htmlFor="sortOrder" className="text-sm font-medium">Sort by date:</label>
+              <select
+                id="sortOrder"
+                value={sortOrder}
+                onChange={e => setSortOrder(e.target.value as 'asc' | 'desc')}
+                className="border-gray-300 rounded"
+              >
+                <option value="asc">Oldest first</option>
+                <option value="desc">Newest first</option>
+              </select>
+            </div>
+          </div>
           {loading ? (
             <p>Loading issues...</p>
           ) : filteredIssues.length > 0 ? (
             <ul className="space-y-4">
-              {filteredIssues.map(issue => (
+              {sortedIssues.map(issue => (
                 <li key={issue.id} className="border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow bg-white">
                   <h3 className="text-xl font-medium mb-1">
                     <a href={issue.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
@@ -192,6 +214,9 @@ const HomePage: React.FC = () => {
                     <a href={`https://github.com/${issue.repository}`} target="_blank" rel="noopener noreferrer" className="hover:underline">
                       {issue.repository}
                     </a> - Issue #{issue.number}
+                  </p>
+                  <p className="text-sm text-gray-500 mb-2">
+                    Opened: {new Date(issue.created_at).toLocaleDateString()}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {issue.tags.map(tag => (
