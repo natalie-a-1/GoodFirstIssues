@@ -31,9 +31,11 @@ const HomePage: React.FC = () => {
     const fetchIssuesData = async () => {
       try {
         setLoading(true);
-        // Construct URL using the public environment variable
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_PATH || '';
-        const fetchUrl = `${baseUrl}/issues.json`;
+        // Construct URL using the public environment variable - **TEST: Hardcoding basePath**
+        // const baseUrl = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        // const fetchUrl = `${baseUrl}/issues.json`;
+        const fetchUrl = `/crypto-good-first-issues/issues.json`; // Hardcoded path
+        console.log(`Fetching issues from: ${fetchUrl}`); // Log the URL being fetched
         const response = await fetch(fetchUrl);
         const lastModifiedHeader = response.headers.get('Last-Modified');
         if (lastModifiedHeader) {
