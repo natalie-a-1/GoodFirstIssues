@@ -96,11 +96,15 @@
   .card, 
   .apple-card {
     @apply bg-white dark:bg-[#141414] rounded-xl shadow-sm border border-[#00000008] dark:border-[#ffffff12] overflow-hidden transition-all duration-300 dark:hover:border-[#ffffff20] dark:shadow-[0_8px_30px_rgba(0,0,0,0.12)];
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
   }
   
   /* Subtle hover effects */
   .apple-hover {
     @apply transition-all duration-300 hover:scale-[1.03] dark:hover:shadow-[0_8px_25px_rgba(0,0,0,0.25)];
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    }
   }
   
   /* Additional Apple-like styles */
