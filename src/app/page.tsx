@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { AppleButton } from '@/components/ui/apple-button';
 
 interface Issue {
@@ -120,28 +120,8 @@ const HomePage: React.FC = () => {
     }
   };
 
-  // Apply all filters (tags and search query)
-  useEffect(() => {
-    applyFilters(selectedTags, searchQuery);
-  }, [searchQuery, selectedTags, issues]);
-
-  // Handle search input changes
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-  };
-
-  // Handle tag selection changes
-  const handleTagChange = (tag: string) => {
-    setSelectedTags(prevSelectedTags => {
-      const newSelectedTags = prevSelectedTags.includes(tag)
-        ? prevSelectedTags.filter(t => t !== tag)
-        : [...prevSelectedTags, tag];
-      return newSelectedTags;
-    });
-  };
-
   // Apply both tag filters and search query
-  const applyFilters = (currentSelectedTags: string[], query: string) => {
+  const applyFilters = useCallback((currentSelectedTags: string[], query: string) => {
     // First, filter by tags
     let results = issues;
     
@@ -177,6 +157,26 @@ const HomePage: React.FC = () => {
     }
 
     setFilteredIssues(results);
+  }, [issues, tagCategoryMap]);
+
+  // Apply all filters (tags and search query)
+  useEffect(() => {
+    applyFilters(selectedTags, searchQuery);
+  }, [searchQuery, selectedTags, applyFilters]);
+
+  // Handle search input changes
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Handle tag selection changes
+  const handleTagChange = (tag: string) => {
+    setSelectedTags(prevSelectedTags => {
+      const newSelectedTags = prevSelectedTags.includes(tag)
+        ? prevSelectedTags.filter(t => t !== tag)
+        : [...prevSelectedTags, tag];
+      return newSelectedTags;
+    });
   };
 
   // Group tags into categories
@@ -185,7 +185,7 @@ const HomePage: React.FC = () => {
     "Languages": ["go", "rust", "javascript", "python", "solidity", "cpp", "c", "react"],
     "Domains": ["core", "consensus", "docs", "frontend", "tooling", "smartcontracts", "language", "infrastructure", "nft", "lightning"]
   };
-  let categorizedTags: Record<string, string[]> = Object.entries(tagCategoryMap).reduce((acc, [category, tags]) => {
+  const categorizedTags: Record<string, string[]> = Object.entries(tagCategoryMap).reduce((acc, [category, tags]) => {
     acc[category] = tags.filter(tag => allTags.includes(tag));
     return acc;
   }, {} as Record<string, string[]>);

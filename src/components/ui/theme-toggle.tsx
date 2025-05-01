@@ -2,7 +2,6 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { AppleButton } from "./apple-button";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
