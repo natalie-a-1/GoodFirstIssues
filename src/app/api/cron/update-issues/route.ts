@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+// Remove unused imports
+// import { promises as fs } from 'fs';
+// import path from 'path';
 import { fetchIssues } from '@/lib/fetch-issues';
 import { kv } from '@vercel/kv'; // Import Vercel KV
 
