@@ -2,6 +2,8 @@ import requests
 import json
 import os
 import time
+import sys
+from pathlib import Path
 
 # Define repositories, their tags, and the specific label for 'good first issue'
 REPOS = [
@@ -25,15 +27,21 @@ REPOS = [
     {"owner": "Uniswap", "repo": "uniswap-interface", "label": "good first issue", "tags": ["defi", "frontend", "react"]}
 ]
 
-OUTPUT_FILE = "/home/ubuntu/crypto-good-first-issues/public/issues.json"
+# Use a relative path for the output file so it works in any environment
+# This will save the file in the public directory relative to the script
+script_dir = Path(__file__).parent
+project_root = script_dir.parent
+OUTPUT_FILE = project_root / "public" / "issues.json"
 
 def fetch_issues():
     all_issues = []
     headers = {
         "Accept": "application/vnd.github.v3+json"
-        # Consider adding an Authorization header with a GitHub token if rate limits are hit
-        # "Authorization": "token YOUR_GITHUB_TOKEN"
     }
+    
+    # Use GitHub token if available in environment
+    if "GITHUB_TOKEN" in os.environ:
+        headers["Authorization"] = f"token {os.environ['GITHUB_TOKEN']}"
 
     print(f"Fetching issues from {len(REPOS)} repositories...")
 
@@ -47,8 +55,6 @@ def fetch_issues():
         print(f"Fetching issues for {repo_full_name} with label '{label}'...")
 
         # Construct the API URL
-        # Note: GitHub API requires labels to be comma-separated if multiple, but here we need exact match for one label.
-        # We need to URL encode the label name if it contains special characters, but these seem safe.
         api_url = f"https://api.github.com/repos/{owner}/{repo}/issues?state=open&labels={label}"
 
         try:
