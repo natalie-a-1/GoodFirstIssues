@@ -31,7 +31,10 @@ const HomePage: React.FC = () => {
     const fetchIssuesData = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/issues.json');
+        // Construct URL using the public environment variable
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const fetchUrl = `${baseUrl}/issues.json`;
+        const response = await fetch(fetchUrl);
         const lastModifiedHeader = response.headers.get('Last-Modified');
         if (lastModifiedHeader) {
           setLastUpdated(new Date(lastModifiedHeader).toLocaleString());
@@ -120,6 +123,13 @@ const HomePage: React.FC = () => {
     }
   };
 
+  // Group tags into categories
+  const tagCategoryMap: Record<string, string[]> = {
+    "Blockchains": ["ethereum", "polkadot", "cosmos", "solana", "bitcoin", "ipfs", "defi", "web3"],
+    "Languages": ["go", "rust", "javascript", "python", "solidity", "cpp", "c", "react"],
+    "Domains": ["core", "consensus", "docs", "frontend", "tooling", "smartcontracts", "language", "infrastructure", "nft", "lightning"]
+  };
+
   // Apply both tag filters and search query
   const applyFilters = useCallback((currentSelectedTags: string[], query: string) => {
     // First, filter by tags
@@ -179,12 +189,7 @@ const HomePage: React.FC = () => {
     });
   };
 
-  // Group tags into categories
-  const tagCategoryMap: Record<string, string[]> = {
-    "Blockchains": ["ethereum", "polkadot", "cosmos", "solana", "bitcoin", "ipfs", "defi", "web3"],
-    "Languages": ["go", "rust", "javascript", "python", "solidity", "cpp", "c", "react"],
-    "Domains": ["core", "consensus", "docs", "frontend", "tooling", "smartcontracts", "language", "infrastructure", "nft", "lightning"]
-  };
+  // The rest of the categorization logic remains here
   const categorizedTags: Record<string, string[]> = Object.entries(tagCategoryMap).reduce((acc, [category, tags]) => {
     acc[category] = tags.filter(tag => allTags.includes(tag));
     return acc;

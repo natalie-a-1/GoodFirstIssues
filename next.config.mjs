@@ -7,6 +7,11 @@ const nextConfig = {
   assetPrefix: "/crypto-good-first-issues/",
   basePath: "/crypto-good-first-issues",
 
+  // Make basePath available to the client side
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/crypto-good-first-issues",
+  },
+
   // React Strict Mode is recommended for identifying potential problems
   reactStrictMode: true,
 
