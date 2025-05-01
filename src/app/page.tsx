@@ -59,8 +59,12 @@ const HomePage: React.FC = () => {
         // After loading issues, fetch repository details
         fetchRepositoryDetails(data);
       } catch (e) {
-        console.error("Error fetching issues:", e);
-        setError('Failed to load issues. Please try running the fetch script again or check the console.');
+        console.error("Error fetching issues data:", e);
+        if (e instanceof Error) {
+            setError(`Failed to load issues: ${e.message}. Check the browser console and network tab for more details. Ensure 'issues.json' exists in the deployment.`);
+        } else {
+            setError('An unknown error occurred while fetching issues. Please check the console.');
+        }
         setIssues([]);
         setAllTags([]);
         setFilteredIssues([]);
