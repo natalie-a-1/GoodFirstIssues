@@ -209,6 +209,17 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background dark:bg-gradient-to-b dark:from-[#0c0c0c] dark:to-background">
+      <div className="fixed top-4 left-4 z-10 text-xs text-muted-foreground dark:text-muted-foreground/80">
+        <a
+          href="https://github.com/natalie-a-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-primary transition-colors flex items-center gap-1"
+        >
+          Made with <span className="text-red-500">❤️</span> by Natalie
+        </a>
+      </div>
+      
       <header className="py-16 px-8 text-center max-w-5xl mx-auto">
         <h1 className="text-xl md:text-3xl font-medium mb-4 tracking-tight dark:text-white">Good First Issues</h1>
         <p className="text-l text-muted-foreground max-w-2xl mx-auto">
