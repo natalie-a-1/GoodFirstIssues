@@ -297,11 +297,11 @@ const HomePage: React.FC = () => {
                             <button
                               key={tag}
                               onClick={() => handleTagChange(tag)}
-                              className={`${
+                              className={`px-2.5 py-0.5 rounded-full text-xs font-medium transition-all duration-300 border ${
                                 selectedTags.includes(tag)
-                                  ? 'bg-primary text-primary-foreground dark:text-white dark:bg-primary shadow-sm'
-                                  : 'tag hover:bg-secondary/80 dark:hover:bg-[#252525]'
-                              } transition-all duration-300`}
+                                  ? 'bg-primary text-primary-foreground dark:text-white dark:bg-primary border-transparent'
+                                  : 'bg-secondary dark:bg-[#202020] dark:text-white border-transparent dark:border-[#ffffff12] hover:bg-secondary/80 dark:hover:bg-[#252525] dark:hover:border-[#ffffff20]'
+                              }`}
                             >
                               {tag}
                             </button>
