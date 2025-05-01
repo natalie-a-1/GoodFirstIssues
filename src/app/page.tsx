@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { AppleButton } from '@/components/ui/apple-button';
 
 interface Issue {
@@ -151,11 +151,11 @@ const HomePage: React.FC = () => {
   };
 
   // Group tags into categories
-  const tagCategoryMap: Record<string, string[]> = {
+  const tagCategoryMap = useMemo(() => ({
     "Blockchains": ["ethereum", "polkadot", "cosmos", "solana", "bitcoin", "ipfs", "defi", "web3"],
     "Languages": ["go", "rust", "javascript", "python", "solidity", "cpp", "c", "react"],
     "Domains": ["core", "consensus", "docs", "frontend", "tooling", "smartcontracts", "language", "infrastructure", "nft", "lightning"]
-  };
+  }), []);
 
   // Apply both tag filters and search query
   const applyFilters = useCallback((currentSelectedTags: string[], query: string) => {

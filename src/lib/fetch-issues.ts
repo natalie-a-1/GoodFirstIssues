@@ -33,6 +33,15 @@ interface Issue {
   number: number;
 }
 
+interface GitHubIssue {
+  id: number;
+  title: string;
+  html_url: string;
+  created_at: string;
+  number: number;
+  pull_request?: { url: string };
+}
+
 export async function fetchIssues(): Promise<{ issues: Issue[], log: string[] }> {
   const allIssues: Issue[] = [];
   const logs: string[] = [];
@@ -64,7 +73,7 @@ export async function fetchIssues(): Promise<{ issues: Issue[], log: string[] }>
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      const issues = await response.json() as any[];
+      const issues = await response.json() as GitHubIssue[];
 
       logs.push(`Found ${issues.length} issues for ${repoFullName}.`);
 
