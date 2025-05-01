@@ -8,11 +8,11 @@ Our mission is simple:
 
 **🔓 Break down barriers → 🛠️ empower first-time contributors → 🌍 grow the decentralised ecosystem.**
 
-[🌐 **Live Site – natalie-a-1.github.io/GoodFirstIssues/**](https://natalie-a-1.github.io/GoodFirstIssues/)
+[🌐 **Live Site – Coming Soon**]()
 
 ---
 
-## 🚀 Why this matters
+## 🤔 Why this matters
 
 The blockchain space thrives on **open collaboration**. Yet, newcomers often struggle to find a welcoming starting point. By surfacing "good first issues" from dozens of repositories, this project:
 
@@ -70,6 +70,15 @@ To refresh the issue list:
 ```bash
 pnpm run update-issues
 ```
+
+## 🚀 Deployment
+
+This project is configured for deployment on Vercel. To deploy:
+
+1. Push your code to a GitHub repository
+2. Import the repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect the Next.js configuration
+4. Your site will be deployed and available at your Vercel URL
 
 ---
 

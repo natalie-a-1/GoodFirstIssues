@@ -1,7 +1,6 @@
 {
   "name": "crypto-good-first-issues",
   "version": "0.1.0",
-  "homepage": "https://natalie-a-1.github.io/crypto-good-first-issues",
   "private": true,
   "workspaces": [
     ".",
