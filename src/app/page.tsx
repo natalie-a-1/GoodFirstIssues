@@ -31,10 +31,10 @@ const HomePage: React.FC = () => {
     const fetchIssuesData = async () => {
       try {
         setLoading(true);
-        // Construct URL using the public environment variable - **TEST: Hardcoding basePath**
-        // const baseUrl = process.env.NEXT_PUBLIC_BASE_PATH || '';
-        // const fetchUrl = `${baseUrl}/issues.json`;
-        const fetchUrl = `/crypto-good-first-issues/issues.json`; // Hardcoded path
+        // Construct a relative URL so it works both locally and when served from a
+        // sub-folder on GitHub Pages. Using a relative path avoids having to know
+        // the base path at runtime.
+        const fetchUrl = 'issues.json';
         console.log(`Fetching issues from: ${fetchUrl}`); // Log the URL being fetched
         const response = await fetch(fetchUrl);
         const lastModifiedHeader = response.headers.get('Last-Modified');
