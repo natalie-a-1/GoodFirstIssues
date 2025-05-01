@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from 'next-themes'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 // Inter is a good alternative to SF Pro while being freely available
 const inter = Inter({
@@ -21,8 +23,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable}`}>
-      <body className="antialiased bg-background text-foreground min-h-screen">{children}</body>
+    <html lang="en" className={`scroll-smooth ${inter.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-background text-foreground min-h-screen">
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="system" 
+          enableSystem 
+          disableTransitionOnChange
+        >
+          {children}
+          <ThemeToggle />
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

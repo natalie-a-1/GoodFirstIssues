@@ -152,26 +152,26 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark:bg-gradient-to-b dark:from-[#0c0c0c] dark:to-background">
       <header className="py-16 px-8 text-center max-w-5xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-medium mb-4 tracking-tight">Good First Issues</h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <h1 className="text-xl md:text-3xl font-medium mb-4 tracking-tight dark:text-white">Good First Issues</h1>
+        <p className="text-l text-muted-foreground max-w-2xl mx-auto">
           Find beginner-friendly issues in popular blockchain projects.
         </p>
         {lastUpdated && (
-          <p className="text-sm text-muted-foreground mt-4">
+          <p className="text-sm text-muted-foreground mt-4 italic font-bold">
             Last updated: {lastUpdated}
           </p>
         )}
         
-        <div className="mt-8 max-w-md mx-auto">
+        <div className="mt-8 max-w-2xl mx-auto">
           <div className="relative">
             <input
               type="text"
               value={searchQuery}
               onChange={handleSearchChange}
               placeholder="Search issues by title or repository..."
-              className="w-full py-3 pl-12 pr-4 rounded-full border border-border bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300"
+              className="w-full py-3 pl-12 pr-4 rounded-full border border-border dark:border-[#ffffff12] bg-white/80 dark:bg-[#1a1a1a] backdrop-blur-sm focus:outline-none focus:ring-1 focus:ring-primary/70 transition-all duration-300 dark:placeholder:text-muted-foreground/70 dark:focus:border-primary"
             />
             <svg 
               className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" 
@@ -209,8 +209,8 @@ const HomePage: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filters Section */}
           <aside className="w-full lg:w-1/4">
-            <div className="sticky top-8 apple-card bg-white p-6">
-              <div className="flex justify-between items-center mb-6">
+            <div className="sticky top-8 apple-card">
+              <div className="flex justify-between items-center mb-6 p-6 border-b dark:border-[#ffffff12]">
                 <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Filter by Tag</h2>
                 {(selectedTags.length > 0 || searchQuery) && (
                   <AppleButton 
@@ -225,13 +225,13 @@ const HomePage: React.FC = () => {
               </div>
               
               {loading ? (
-                <div className="py-4 animate-pulse space-y-2">
+                <div className="p-6 pt-0 animate-pulse space-y-2">
                   <div className="h-4 bg-muted rounded w-3/4"></div>
                   <div className="h-4 bg-muted rounded w-1/2"></div>
                   <div className="h-4 bg-muted rounded w-2/3"></div>
                 </div>
               ) : allTags.length > 0 ? (
-                <div className="space-y-6">
+                <div className="space-y-6 p-6 pt-0">
                   {Object.entries(categorizedTags).map(([category, tags]) =>
                     tags.length > 0 ? (
                       <div key={category}>
@@ -241,11 +241,11 @@ const HomePage: React.FC = () => {
                             <button
                               key={tag}
                               onClick={() => handleTagChange(tag)}
-                              className={`text-xs px-3 py-1.5 rounded-full transition-all duration-300 ${
+                              className={`${
                                 selectedTags.includes(tag)
-                                  ? 'bg-primary text-white'
-                                  : 'bg-secondary hover:bg-secondary/80 text-foreground'
-                              }`}
+                                  ? 'bg-primary text-primary-foreground dark:text-white dark:bg-primary shadow-sm'
+                                  : 'tag hover:bg-secondary/80 dark:hover:bg-[#252525]'
+                              } transition-all duration-300`}
                             >
                               {tag}
                             </button>
@@ -256,7 +256,7 @@ const HomePage: React.FC = () => {
                   )}
                 </div>
               ) : (
-                !error && <p className="text-muted-foreground text-sm">No tags available.</p>
+                !error && <p className="text-muted-foreground text-sm p-6 pt-0">No tags available.</p>
               )}
             </div>
           </aside>
@@ -273,7 +273,7 @@ const HomePage: React.FC = () => {
                   id="sortOrder"
                   value={sortOrder}
                   onChange={e => setSortOrder(e.target.value as 'asc' | 'desc')}
-                  className="text-sm border-0 bg-secondary rounded-full py-1 px-3 focus:ring-0 focus:outline-none"
+                  className="text-sm text-muted-foreground border-0 bg-transparent focus:ring-0 focus:outline-none dark:text-muted-foreground cursor-pointer"
                 >
                   <option value="desc">Newest first</option>
                   <option value="asc">Oldest first</option>
@@ -329,15 +329,12 @@ const HomePage: React.FC = () => {
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {issue.tags.slice(0, 4).map(tag => (
-                          <span 
-                            key={tag} 
-                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground"
-                          >
+                          <span key={tag} className="tag">
                             {tag}
                           </span>
                         ))}
                         {issue.tags.length > 4 && (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground">
+                          <span className="tag">
                             +{issue.tags.length - 4}
                           </span>
                         )}
@@ -366,7 +363,7 @@ const HomePage: React.FC = () => {
         </div>
       </div>
       
-      <footer className="py-8 border-t border-border">
+      <footer className="py-8 border-t border-border dark:border-[#ffffff12]">
         <div className="max-w-6xl mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>Crypto & Web3 Good First Issues</p>
         </div>
