@@ -8,7 +8,7 @@ Our mission is simple:
 
 **🔓 Break down barriers → 🛠️ empower first-time contributors → 🌍 grow the decentralised ecosystem.**
 
-[🌐 **Live Site**](good-first-issues-three.vercel.app/)
+[🌐 **Live Site**](https://good-first-issues-three.vercel.app/)
 
 ---
 
