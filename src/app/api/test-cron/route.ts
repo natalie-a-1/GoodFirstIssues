@@ -1,28 +1,17 @@
 import { NextResponse } from 'next/server';
-// Remove unused imports
-// import { promises as fs } from 'fs';
-// import path from 'path';
 import { fetchIssues } from '@/lib/fetch-issues';
 import { kv } from '@vercel/kv'; // Import Vercel KV
 
 export const dynamic = 'force-dynamic';
 
-// This endpoint handles Vercel cron job requests
-export async function GET(request: Request) {
-  // Verify the Vercel cron job secret
-  const authHeader = request.headers.get('authorization');
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    // Check if the secret is missing entirely, which might happen in development
-    if (!process.env.CRON_SECRET && process.env.NODE_ENV === 'development') {
-      console.warn('CRON_SECRET is not set. Allowing request in development mode.');
-    } else {
-      return new Response('Unauthorized', {
-        status: 401,
-      });
-    }
-  }
-
+/**
+ * This endpoint allows you to manually trigger the cron job functionality locally
+ * It mimics what the Vercel cron job would do in production
+ */
+export async function GET() {
   try {
+    console.log('Starting manual cron job test...');
+    
     // Fetch issues using our TypeScript function
     console.log('Starting issues fetch process...');
     const { issues, log } = await fetchIssues();
@@ -34,17 +23,18 @@ export async function GET(request: Request) {
 
     // Save timestamp to Vercel KV
     await kv.set('last_cron_update_timestamp', timestampString);
-    console.log('Timestamp saved to Vercel KV');
+    console.log('Timestamp saved to Vercel KV:', timestampString);
 
+    // Return response
     return NextResponse.json({
       success: true,
-      message: 'Issues updated successfully',
+      message: 'Cron job test executed successfully',
       timestamp: timestampString,
       issueCount: issues.length,
       logs: log
     });
   } catch (error) {
-    console.error('Error updating issues:', error);
+    console.error('Error executing test cron job:', error);
     
     return NextResponse.json(
       { success: false, error: (error as Error).message },
