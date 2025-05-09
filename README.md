@@ -75,32 +75,31 @@ pnpm run update-issues
 
 This project is configured for deployment on Vercel. To deploy:
 
-1. Push your code to a GitHub repository
-2. Import the repository on [Vercel](https://vercel.com)
-3. Vercel will automatically detect the Next.js configuration
-4. Your site will be deployed and available at your Vercel URL
+1. Push your code to a GitHub repository.
+2. Import the repository on [Vercel](https://vercel.com).
+3. Connect a Vercel KV store to your project for storing fetched issues and timestamps.
+4. Vercel will automatically detect the Next.js configuration.
+5. Your site will be deployed and available at your Vercel URL.
 
 ## Environment Variables
 
-The following environment variables need to be set in your Vercel project:
+The following environment variables need to be set in your Vercel project (Settings > Environment Variables):
 
-- `CRON_SECRET_KEY`: A secret key to secure the cron job API endpoint
-- `GITHUB_TOKEN`: GitHub personal access token to avoid rate limiting when fetching issues
-
-To set these variables in Vercel:
-1. Go to your Vercel project dashboard
-2. Navigate to Settings > Environment Variables
-3. Add the variables with their respective values
+- `CRON_SECRET`: A secret key you generate to secure the cron job API endpoint. This is used in the `Authorization: Bearer <secret>` header.
+- `GITHUB_TOKEN`: (Optional, but Recommended) A GitHub personal access token to increase rate limits when fetching issues from the GitHub API.
+- Vercel KV Environment Variables: When you connect a Vercel KV store, Vercel will automatically add the necessary KV store connection variables (e.g., `KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`).
 
 ## Cron Job
 
-This project includes a daily cron job that automatically updates the GitHub issues. The cron job:
-1. Runs every day at midnight UTC
-2. Fetches the latest 'good first issues' from various repositories
-3. Updates the issues.json file
-4. Updates the last-update.json file with the current timestamp
+This project includes a cron job that automatically updates the GitHub issues. The cron job:
+1. Is configured in `vercel.json` to run on a schedule (e.g., daily).
+2. Calls the `/api/cron/update-issues` endpoint.
+3. Fetches the latest 'good first issues' from various repositories using the GitHub API.
+4. Saves the fetched issues to a Vercel KV store (key: `all_issues_data`).
+5. Saves the update timestamp to Vercel KV (key: `last_cron_update_timestamp`).
 
-The cron job is configured in `vercel.json` and implemented in `/api/cron/update-issues`.
+The API route `/api/get-issues` retrieves the issues from Vercel KV for display on the frontend.
+The API route `/api/get-last-update` retrieves the last update timestamp from Vercel KV.
 
 ---
 

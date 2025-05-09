@@ -31,9 +31,27 @@ const HomePage: React.FC = () => {
     const fetchIssuesData = async () => {
       try {
         setLoading(true);
-        const fetchUrl = 'issues.json';
-        console.log(`Fetching issues from: ${fetchUrl}`);
-        const response = await fetch(fetchUrl);
+
+        const issuesResponse = await fetch('/api/get-issues');
+        if (!issuesResponse.ok) {
+          let errorDetails = issuesResponse.statusText;
+          try {
+            const errorData: Record<string, unknown> = await issuesResponse.json();
+            errorDetails = String(errorData?.details || errorData?.message || errorDetails);
+          } catch (_e) {
+            // Failed to parse JSON body, stick with statusText
+            console.error('Failed to parse error JSON during issues fetch:', _e);
+          }
+          throw new Error(`HTTP error! status: ${issuesResponse.status}, details: ${errorDetails}`);
+        }
+
+        const issuesData = await issuesResponse.json() as { issues: Issue[], message?: string };
+        
+        if (issuesData.message) {
+          console.log('Message from /api/get-issues:', issuesData.message);
+        }
+
+        setIssues(issuesData.issues || []); // Ensure issues is always an array
 
         // Fetch the last update time from our new API endpoint
         try {
@@ -56,29 +74,25 @@ const HomePage: React.FC = () => {
           setLastUpdated(null); // Clear on error
         }
         
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data: Issue[] = await response.json();
-        setIssues(data);
-
         // Extract unique tags
         const tagsSet = new Set<string>();
-        data.forEach(issue => {
+        (issuesData.issues || []).forEach(issue => {
           issue.tags.forEach(tag => tagsSet.add(tag));
         });
         const sortedTags = Array.from(tagsSet).sort();
         setAllTags(sortedTags);
 
-        setFilteredIssues(data); // Initially show all issues
+        setFilteredIssues(issuesData.issues || []); 
         setError(null);
         
         // After loading issues, fetch repository details
-        fetchRepositoryDetails(data);
+        if (issuesData.issues && issuesData.issues.length > 0) {
+            fetchRepositoryDetails(issuesData.issues);
+        }
       } catch (e) {
         console.error("Error fetching issues data:", e);
         if (e instanceof Error) {
-            setError(`Failed to load issues: ${e.message}. Check the browser console and network tab for more details. Ensure 'issues.json' exists in the deployment.`);
+            setError(`Failed to load issues: ${e.message}. Please try again later.`);
         } else {
             setError('An unknown error occurred while fetching issues. Please check the console.');
         }
@@ -232,6 +246,40 @@ const HomePage: React.FC = () => {
     setSelectedTags([]);
     setSearchQuery('');
   };
+
+  // UI for loading, error, and empty states
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background dark:bg-gradient-to-b dark:from-[#0c0c0c] dark:to-background">
+        <p className="text-lg text-foreground dark:text-gray-300">Loading awesome issues...</p>
+        {/* You can add a spinner component here if you have one */}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background dark:bg-gradient-to-b dark:from-[#0c0c0c] dark:to-background">
+        <p className="text-lg text-red-500 dark:text-red-400">Error: {error}</p>
+        <p className="text-sm text-muted-foreground dark:text-gray-500 mt-2">Please try refreshing the page or check back later.</p>
+      </div>
+    );
+  }
+
+  if (!loading && issues.length === 0 && !error) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background dark:bg-gradient-to-b dark:from-[#0c0c0c] dark:to-background">
+        <h1 className="text-xl md:text-3xl font-medium mb-4 tracking-tight dark:text-white">Good First Issues</h1>
+        <p className="text-lg text-foreground dark:text-gray-300">No issues found at the moment.</p>
+        <p className="text-sm text-muted-foreground dark:text-gray-500 mt-2">
+          This could be because the issues are currently being updated by our cron job, or there are no matching issues based on active filters.
+        </p>
+        <p className="text-sm text-muted-foreground dark:text-gray-500 mt-1">
+          Last checked for updates: {lastUpdated || 'Not available'}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background dark:bg-gradient-to-b dark:from-[#0c0c0c] dark:to-background">
