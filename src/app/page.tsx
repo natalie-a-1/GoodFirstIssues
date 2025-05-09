@@ -40,6 +40,7 @@ const HomePage: React.FC = () => {
             errorDetails = String(errorData?.details || errorData?.message || errorDetails);
           } catch (_e) {
             // Failed to parse JSON body, stick with statusText
+            console.error('Failed to parse error JSON during issues fetch:', _e);
           }
           throw new Error(`HTTP error! status: ${issuesResponse.status}, details: ${errorDetails}`);
         }
