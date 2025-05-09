@@ -1,5 +1,4 @@
-import fs from 'fs/promises';
-import path from 'path';
+import { kv } from '@vercel/kv';
 
 // Define repositories, their tags, and the specific label for 'good first issue'
 const REPOS = [
@@ -103,18 +102,15 @@ export async function fetchIssues(): Promise<{ issues: Issue[], log: string[] }>
 
   logs.push(`Total issues fetched: ${allIssues.length}`);
 
-  // Save the issues to a JSON file
+  // Save the issues to Vercel KV
   try {
-    const outputDir = path.join(process.cwd(), 'public');
-    const outputFile = path.join(outputDir, 'issues.json');
-    
-    await fs.mkdir(outputDir, { recursive: true });
-    await fs.writeFile(outputFile, JSON.stringify(allIssues, null, 2));
-    logs.push(`Successfully saved issues to ${outputFile}`);
+    await kv.set('all_issues_data', allIssues);
+    logs.push(`Successfully saved ${allIssues.length} issues to Vercel KV.`);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    logs.push(`Error writing issues to file: ${errorMessage}`);
-    throw error;
+    logs.push(`Error saving issues to Vercel KV: ${errorMessage}`);
+    // Re-throw the error so the cron job status reflects the failure if KV save fails
+    throw error; 
   }
 
   return { issues: allIssues, log: logs };
