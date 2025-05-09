@@ -163,7 +163,7 @@ export async function fetchIssues(): Promise<{ issues: Issue[], log: string[] }>
       }
 
       // Small delay to avoid rate limits
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 250));
 
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
