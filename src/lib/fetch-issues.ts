@@ -2,6 +2,7 @@ import { kv } from '@vercel/kv';
 
 // Define repositories, their tags, and the specific label for 'good first issue'
 const REPOS = [
+  // Original repositories provided
   { owner: "ethereum", repo: "go-ethereum", label: "good first issue", tags: ["ethereum", "core", "go"] },
   { owner: "prysmaticlabs", repo: "prysm", label: "good first issue", tags: ["ethereum", "consensus", "go"] },
   { owner: "sigp", repo: "lighthouse", label: "good first issue", tags: ["ethereum", "consensus", "rust"] },
@@ -20,6 +21,94 @@ const REPOS = [
   { owner: "ElementsProject", repo: "lightning", label: "good first issue", tags: ["bitcoin", "lightning", "c"] },
   { owner: "ipfs", repo: "kubo", label: "good first issue", tags: ["ipfs", "web3", "go"] },
   { owner: "Uniswap", repo: "uniswap-interface", label: "good first issue", tags: ["defi", "frontend", "react"] },
+
+  // Ethereum ecosystem additions
+  { owner: "ethereum", repo: "web3.js", label: "good first issue", tags: ["ethereum", "tooling", "javascript"] },
+  { owner: "trufflesuite", repo: "truffle", label: "good first issue", tags: ["ethereum", "tooling", "javascript"] },
+  { owner: "ConsenSys", repo: "mythril", label: "good first issue", tags: ["ethereum", "security", "python"] },
+  { owner: "foundry-rs", repo: "foundry", label: "good first issue", tags: ["ethereum", "smartcontracts", "rust"] },
+  { owner: "ethereum", repo: "remix-project", label: "good first issue", tags: ["ethereum", "ide", "javascript"] },
+
+  // Cardano ecosystem
+  { owner: "input-output-hk", repo: "cardano-node", label: "Good First Issue", tags: ["cardano", "core", "haskell"] },
+  { owner: "input-output-hk", repo: "cardano-wallet", label: "Good First Issue", tags: ["cardano", "wallet", "haskell"] },
+  { owner: "input-output-hk", repo: "plutus", label: "Good First Issue", tags: ["cardano", "smartcontracts", "haskell"] },
+
+  // Polkadot/Substrate ecosystem
+  { owner: "paritytech", repo: "polkadot", label: "good first issue", tags: ["polkadot", "core", "rust"] },
+  { owner: "paritytech", repo: "substrate", label: "good first issue", tags: ["polkadot", "framework", "rust"] },
+
+  // Cosmos ecosystem
+  { owner: "cosmos", repo: "cosmos-sdk", label: "good first issue", tags: ["cosmos", "framework", "go"] },
+  { owner: "tendermint", repo: "tendermint", label: "good first issue", tags: ["cosmos", "consensus", "go"] },
+
+  // Solana ecosystem
+  { owner: "solana-labs", repo: "solana-web3.js", label: "good first issue", tags: ["solana", "tooling", "javascript"] },
+  { owner: "metaplex-foundation", repo: "metaplex", label: "good first issue", tags: ["solana", "nft", "typescript"] },
+
+  // Bitcoin ecosystem
+  { owner: "btcsuite", repo: "btcd", label: "good first issue", tags: ["bitcoin", "core", "go"] },
+  { owner: "bitcoinjs", repo: "bitcoinjs-lib", label: "good first issue", tags: ["bitcoin", "tooling", "javascript"] },
+
+  // DeFi projects
+  { owner: "aave", repo: "protocol-v2", label: "good first issue", tags: ["defi", "smartcontracts", "solidity"] },
+  { owner: "compound-finance", repo: "compound-protocol", label: "good first issue", tags: ["defi", "smartcontracts", "solidity"] },
+  { owner: "makerdao", repo: "dai.js", label: "good first issue", tags: ["defi", "tooling", "javascript"] },
+  { owner: "sushiswap", repo: "sushiswap", label: "good first issue", tags: ["defi", "smartcontracts", "solidity"] },
+  { owner: "yearn", repo: "yearn-vaults", label: "good first issue", tags: ["defi", "smartcontracts", "solidity"] },
+  { owner: "balancer-labs", repo: "balancer-core", label: "good first issue", tags: ["defi", "smartcontracts", "solidity"] },
+
+  // NFT projects
+  { owner: "rarible", repo: "protocol", label: "good first issue", tags: ["nft", "smartcontracts", "solidity"] },
+  { owner: "decentraland", repo: "marketplace", label: "good first issue", tags: ["nft", "frontend", "react"] },
+
+  // Layer 2 solutions
+  { owner: "ethereum-optimism", repo: "optimism", label: "good first issue", tags: ["layer2", "ethereum", "go"] },
+  { owner: "OffchainLabs", repo: "arbitrum", label: "good first issue", tags: ["layer2", "ethereum", "go"] },
+  { owner: "maticnetwork", repo: "matic.js", label: "good first issue", tags: ["layer2", "tooling", "javascript"] },
+  { owner: "zkSync-Community-Hub", repo: "zksync", label: "good first issue", tags: ["layer2", "smartcontracts", "solidity"] },
+
+  // Interoperability and oracles
+  { owner: "smartcontractkit", repo: "chainlink", label: "good first issue", tags: ["oracles", "smartcontracts", "go"] },
+  { owner: "interledger", repo: "rafiki", label: "good first issue", tags: ["interoperability", "javascript"] },
+  { owner: "wormhole-foundation", repo: "wormhole", label: "good first issue", tags: ["interoperability", "smartcontracts", "solidity"] },
+
+  // Decentralized storage
+  { owner: "filecoin-project", repo: "lotus", label: "good first issue", tags: ["storage", "go"] },
+  { owner: "storj", repo: "storj", label: "good first issue", tags: ["storage", "go"] },
+  { owner: "sia-tech", repo: "siad", label: "good first issue", tags: ["storage", "go"] },
+
+  // Identity and governance
+  { owner: "ceramicnetwork", repo: "js-ceramic", label: "good first issue", tags: ["identity", "javascript"] },
+  { owner: "ensdomains", repo: "ens", label: "good first issue", tags: ["identity", "smartcontracts", "solidity"] },
+  { owner: "aragon", repo: "aragon-ui", label: "good first issue", tags: ["governance", "frontend", "react"] },
+  { owner: "gnosis", repo: "conditional-tokens-contracts", label: "good first issue", tags: ["defi", "smartcontracts", "solidity"] },
+
+  // Privacy-focused projects
+  { owner: "zcash", repo: "zcash", label: "good first issue", tags: ["privacy", "core", "cpp"] },
+  { owner: "monero-project", repo: "monero", label: "good first issue", tags: ["privacy", "core", "cpp"] },
+
+  // Wallets
+  { owner: "MetaMask", repo: "metamask-extension", label: "good first issue", tags: ["wallet", "frontend", "javascript"] },
+  { owner: "trustwallet", repo: "assets", label: "good first issue", tags: ["wallet", "blockchain", "json"] },
+
+  // Explorers and analytics
+  { owner: "poanetwork", repo: "blockscout", label: "good first issue", tags: ["explorer", "elixir"] },
+  { owner: "blockchain-etl", repo: "ethereum-etl", label: "good first issue", tags: ["analytics", "python"] },
+  { owner: "graphprotocol", repo: "graph-node", label: "good first issue", tags: ["indexing", "rust"] },
+
+  // Stablecoins
+  { owner: "ampleforth", repo: "ampleforth-protocol", label: "good first issue", tags: ["stablecoin", "smartcontracts", "solidity"] },
+
+  // Additional ecosystems and tools
+  { owner: "near", repo: "nearcore", label: "good first issue", tags: ["near", "core", "rust"] },
+  { owner: "avalanche-foundation", repo: "avalanchego", label: "good first issue", tags: ["avalanche", "core", "go"] },
+  { owner: "hedera-hashgraph", repo: "hedera-services", label: "good first issue", tags: ["hedera", "core", "java"] },
+  { owner: "stellar", repo: "stellar-core", label: "good first issue", tags: ["stellar", "core", "cpp"] },
+  { owner: "algorand", repo: "go-algorand", label: "good first issue", tags: ["algorand", "core", "go"] },
+  { owner: "tezos", repo: "tezos", label: "good first issue", tags: ["tezos", "core", "ocaml"] },
+  { owner: "radicle-dev", repo: "radicle-link", label: "good first issue", tags: ["web3", "p2p", "rust"] },
+  { owner: "hyperledger", repo: "fabric", label: "good first issue", tags: ["enterprise", "blockchain", "go"] }
 ];
 
 interface Issue {

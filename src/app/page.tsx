@@ -36,9 +36,9 @@ const HomePage: React.FC = () => {
         if (!issuesResponse.ok) {
           let errorDetails = issuesResponse.statusText;
           try {
-            const errorData: any = await issuesResponse.json();
-            errorDetails = errorData?.details || errorData?.message || errorDetails;
-          } catch (e) {
+            const errorData: Record<string, unknown> = await issuesResponse.json();
+            errorDetails = String(errorData?.details || errorData?.message || errorDetails);
+          } catch (_e) {
             // Failed to parse JSON body, stick with statusText
           }
           throw new Error(`HTTP error! status: ${issuesResponse.status}, details: ${errorDetails}`);
